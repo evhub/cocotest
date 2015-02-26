@@ -1,0 +1,58 @@
+# Infix Functions:
+plus = (+)
+mod = (%)
+base = int
+
+# Basic Functions:
+plus1 = plus$(1)
+sqrt(x) = x**0.5
+square = x -> x**2
+plus1sq = square..plus1
+sqplus1 = plus1..square
+plus1sq_ = (x) -> x |> plus1 |> square
+sqplus1_ = (x) -> x |> square |> plus1
+
+# Partial Applications:
+sum_ = reduce$((+))
+add = zipwith$((+))
+
+# Non-Functional Quick Sort:
+def qsort1(l):
+    if len(l) == 0:
+        return []
+    else:
+        split = l.pop(0)
+        smalls = []
+        larges = []
+        for x in l:
+            if x <= split:
+                smalls.append(x)
+            else:
+                larges.append(x)
+        return qsort(smalls) + [split] + qsort(larges)
+
+# Functional Quick Sort:
+def qsort2(l):
+    if len(l) == 0:
+        return []
+    else:
+        head, tail = l[0], l[1:]
+        return [x if x <= head for x in tail] + [head] + [x if x > head for x in tail]
+
+# Iterator Quick Sort:
+def qsort3(l):
+    try:
+        head, tail = next(l)
+        return (x if x <= head for x in tail) :: iter([head]) :: (x if x > head for x in tail)
+    except StopIteration:
+        return iter([])
+
+# Infinite Iterators:
+@recursive
+def repeat(elem):
+    yield elem
+    repeat(elem)
+@recursive
+def N(n=0):
+    yield n
+    N(n+1)
