@@ -18,6 +18,7 @@ add = zipwith$((+))
 
 # Non-Functional Quick Sort:
 def qsort1(l):
+    """Non-Functional Quick Sort."""
     if len(l) == 0:
         return []
     else:
@@ -33,6 +34,7 @@ def qsort1(l):
 
 # Functional Quick Sort:
 def qsort2(l):
+    """Functional Quick Sort."""
     if len(l) == 0:
         return []
     else:
@@ -41,6 +43,7 @@ def qsort2(l):
 
 # Iterator Quick Sort:
 def qsort3(l):
+    """Iterator Quick Sort."""
     try:
         head, tail = next(l)
         return (x if x <= head for x in tail) :: iter([head]) :: (x if x > head for x in tail)
@@ -50,9 +53,11 @@ def qsort3(l):
 # Infinite Iterators:
 @recursive
 def repeat(elem):
+    """Repeat Iterator."""
     yield elem
     repeat(elem)
 @recursive
 def N(n=0):
+    """Natural Numbers."""
     yield n
     N(n+1)
