@@ -1,0 +1,19 @@
+language: python
+
+python:
+  - "2.6"
+  - "2.7"
+  - "3.2"
+  - "3.3"
+  - "3.4"
+
+install:
+  - pip install coconut
+  - pip install autopep8
+
+script:
+  - coconut src build --strict --autopep8
+  - python build/main.py -tt
+
+notifications:
+  email: false
