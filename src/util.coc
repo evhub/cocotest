@@ -18,7 +18,7 @@ add = zipwith$((+))
 
 # Non-Functional Quick Sort:
 def qsort1(l):
-    """Non-Functional Quick Sort."""
+    '''Non-Functional Quick Sort.'''
     if len(l) == 0:
         return []
     else:
@@ -38,7 +38,7 @@ def qsort2(l):
     if len(l) == 0:
         return []
     else:
-        head, tail = l[0], l[1:]
+        head, tail = l[0], l[1:] # Python Pattern-Matching
         return [x if x <= head for x in tail] + [head] + [x if x > head for x in tail]
 
 # Iterator Quick Sort:
@@ -46,6 +46,7 @@ def qsort3(l):
     """Iterator Quick Sort."""
     try:
         head, tail = next(l)
+        # Since only next is ever called on l, it only has to be an iterator
         return (x if x <= head for x in tail) :: iter([head]) :: (x if x > head for x in tail)
     except StopIteration:
         return iter([])
