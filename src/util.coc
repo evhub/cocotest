@@ -6,7 +6,7 @@ base = int
 # Basic Functions:
 plus1 = plus$(1)
 sqrt(x) = x**0.5
-square = x -> x**2
+square = (x) -> x**2
 plus1sq = square..plus1
 sqplus1 = plus1..square
 plus1sq_ = (x) -> x |> plus1 |> square
