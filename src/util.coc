@@ -39,7 +39,7 @@ def qsort2(l):
         return []
     else:
         head, tail = l[0], l[1:] # Python Pattern-Matching
-        return [x if x <= head for x in tail] + [head] + [x if x > head for x in tail]
+        return [x for x in tail if x <= head] + [head] + [x for x in tail if x > head]
 
 # Iterator Quick Sort:
 def qsort3(l):
@@ -47,7 +47,7 @@ def qsort3(l):
     try:
         head, tail = next(l)
         # Since only next is ever called on l, it only has to be an iterator
-        return (x if x <= head for x in tail) :: iter([head]) :: (x if x > head for x in tail)
+        return (x for x in tail if x <= head) :: iter([head]) :: (x for x in tail if x > head)
     except StopIteration:
         return iter([])
 
