@@ -1,4 +1,4 @@
-from testutil import *
+from cocotest.util import *
 
 assert "hello, world" == r"hello, world"
 assert 1 `plus` 1 == 2
