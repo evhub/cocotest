@@ -21,7 +21,7 @@ for qsort in [qsort1, qsort2, qsort3]:
     for x in qsort(rand_list(10)):
         assert x >= last
         last = x
-assert repeat(3)$[2] == 2
+assert repeat(3)$[2] == 3
 assert sum_(repeat(1)$[:5]) == 4
 assert list(add(repeat(1), N())$[:5]) == [2,3,4,5]
 assert collatz(27)
