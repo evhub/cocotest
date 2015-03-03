@@ -16,7 +16,7 @@ assert plus1sq(3) == 16 == plus1sq_(3)
 assert sqplus1(3) == 10 == sqplus1_(3)
 assert sum_([1,7,3,5]) == 16
 assert list(add([1,2,3], [10,20,30])) == [11,22,33]
-for qsort in [qsort1, qsort2, qsort3]
+for qsort in [qsort1, qsort2, qsort3]:
     last = 0
     for x in qsort(rand_list(10)):
         assert x >= last
