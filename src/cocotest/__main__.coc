@@ -24,3 +24,4 @@ for qsort in [qsort1, qsort2, qsort3]:
 assert repeat(3)$[2] == 2
 assert sum_(repeat(1)$[:5]) == 4
 assert list(add(repeat(1), N())$[:5]) == [2,3,4,5]
+assert collatz(27)

@@ -61,13 +61,22 @@ def qsort3(l):
         return iter([])
 
 # Infinite Iterators:
-@recursive
 def repeat(elem):
     """Repeat Iterator."""
-    yield elem
-    repeat(elem)
-@recursive
+    while True:
+        yield elem
 def N(n=0):
     """Natural Numbers."""
-    yield n
-    N(n+1)
+    while True:
+        yield n
+        n += 1
+
+# Recursive Functions:
+@recursive
+def collatz(n):
+    if n == 1:
+        return True
+    elif n%2 == 0:
+        return collatz(n/2)
+    else:
+        return collatz(3*n+1)
