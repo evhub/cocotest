@@ -53,7 +53,7 @@ def qsort2(l):
 def qsort3(l):
     """Iterator Quick Sort."""
     try:
-        head, tail = next(l)
+        head, tail = next(iter(l))
         # Since only next is ever called on l, it only has to be an iterator
         return qsort3((x for x in tail if x <= head)) :: iter([head]) :: qsort3((x for x in tail if x > head))
     except StopIteration:
