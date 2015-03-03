@@ -1,3 +1,11 @@
+# Imports:
+import random
+
+# Random Number Helper:
+def rand_list(n):
+    '''Generates A Random List Of Length n.'''
+    return [random.randrange(10) for x in range(0, n)]
+
 # Infix Functions:
 plus = (+)
 mod = (%)
