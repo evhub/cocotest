@@ -38,7 +38,7 @@ def qsort1(l):
                 smalls.append(x)
             else:
                 larges.append(x)
-        return qsort(smalls) + [split] + qsort(larges)
+        return qsort1(smalls) + [split] + qsort1(larges)
 
 # Functional Quick Sort:
 def qsort2(l):
@@ -47,7 +47,7 @@ def qsort2(l):
         return []
     else:
         head, tail = l[0], l[1:] # Python Pattern-Matching
-        return [x for x in tail if x <= head] + [head] + [x for x in tail if x > head]
+        return qsort2([x for x in tail if x <= head]) + [head] + qsort2([x for x in tail if x > head])
 
 # Iterator Quick Sort:
 def qsort3(l):
@@ -55,7 +55,7 @@ def qsort3(l):
     try:
         head, tail = next(l)
         # Since only next is ever called on l, it only has to be an iterator
-        return (x for x in tail if x <= head) :: iter([head]) :: (x for x in tail if x > head)
+        return qsort3(x for x in tail if x <= head) :: iter([head]) :: qsort3(x for x in tail if x > head)
     except StopIteration:
         return iter([])
 
