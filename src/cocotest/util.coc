@@ -80,3 +80,8 @@ def collatz(n):
         return collatz(n/2)
     else:
         return collatz(3*n+1)
+
+# Data Blocks:
+data preop(x, y):
+    def add(self):
+        return self.x + self.y
