@@ -1,0 +1,26 @@
+from .util import *
+
+def main():
+    """Executes Tests."""
+    assert "hello, world" == r"hello, world"
+    assert 1 `plus` 1 == 2
+    assert 3 `mod` 6 == 3
+    assert 5 `mod` 4 == 1
+    assert "11" `base` 2 == 3 == 11_2
+    assert plus1(2) == 3
+    assert sqrt(4) == 2
+    assert square(3) == 9
+    assert plus1sq(3) == 16 == plus1sq_(3)
+    assert sqplus1(3) == 10 == sqplus1_(3)
+    assert sum_([1,7,3,5]) == 16
+    assert list(add([1,2,3], [10,20,30])) == [11,22,33]
+    for qsort in [qsort1, qsort2, qsort3]:
+        last = 0
+        for x in qsort(rand_list(10)):
+            assert x >= last
+            last = x
+    assert repeat(3)$[2] == 3
+    assert sum_(repeat(1)$[:5]) == 5
+    assert list(add(repeat(1), N())$[:5]) == [1,2,3,4,5]
+    assert collatz(27)
+    assert preop(1,2).add() == 3
