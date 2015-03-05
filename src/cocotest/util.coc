@@ -12,6 +12,7 @@ mod = (%)
 base = int
 
 # Basic Functions:
+zipwith(f, *args) = map((*args) -> f(*args), zip(*args))
 plus1 = plus$(1)
 sqrt(x) = x**0.5
 square = (x) -> x**2
