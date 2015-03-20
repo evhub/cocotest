@@ -37,7 +37,7 @@ def main():
     assert (range(-10, 0) :: N())$[5:15] |> sum == -5
     assert add(repeat(1), N())$[:5] |> list == [1,2,3,4,5]
     assert sum(N()$[5:]$[:5]) == 35
-    assert ([$]$(N()) |> ($)(5) |> ($)(10))() |> list == [5,6,7,8,9]
+    assert (10 |> 5 |> ([$]$(N()) |> ($) |> ($)))() |> list == [5,6,7,8,9]
     assert 12 |> next_mul_of $(5) == 15
     assert collatz(27)
     assert preop(1, 2).add() == 3
