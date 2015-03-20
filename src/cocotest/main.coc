@@ -23,5 +23,6 @@ def main():
     assert sum_(repeat(1)$[:5]) == 5
     assert sum_(takewhile((x)-> x<5, N())) == 10
     assert list(add(repeat(1), N())$[:5]) == [1,2,3,4,5]
+    assert sum(N()$[5:]$[:5]) == 35
     assert collatz(27)
     assert preop(1,2).add() == 3
