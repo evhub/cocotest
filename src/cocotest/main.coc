@@ -8,7 +8,7 @@ def main():
     assert 5 `mod` 4 == 1
     assert "11" `base` 2 == 3 == 11_2
     assert 10A_12 == 154 == int("10A", 12)
-    assert 5 |> (-)$(2) |> (**)$(2) == 9
+    assert 5 |> (-)$(2) |> (*)$(2) == -6
     assert range(1, 5) |> prod == 24
     assert plus1(2) == 3
     assert sqrt(4) == 2
