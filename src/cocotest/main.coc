@@ -7,13 +7,19 @@ def main():
     assert 3 `mod` 6 == 3
     assert 5 `mod` 4 == 1
     assert "11" `base` 2 == 3 == 11_2
+    assert 5 |> (-)$(2) |> (**)$(2) == 9
+    assert range(1, 5) |> prod == 24
     assert plus1(2) == 3
     assert sqrt(4) == 2
     assert square(3) == 9
     assert plus1sq(3) == 16 == plus1sq_(3)
     assert sqplus1(3) == 10 == sqplus1_(3)
+    assert 3 |> plus1 |> square == 16
     assert sum_([1,7,3,5]) == 16
-    assert list(add([1,2,3], [10,20,30])) == [11,22,33]
+    assert (add([1,2,3], [10,20,30]) |> list
+            == [11,22,33]
+            == zipsum([1,2,3], [10,20,30]) |> list
+            )
     for qsort in [qsort1, qsort2, qsort3]:
         last = 0
         for x in qsort(rand_list(10)):
@@ -22,7 +28,13 @@ def main():
     assert repeat(3)$[2] == 3
     assert sum_(repeat(1)$[:5]) == 5
     assert sum_(takewhile((x)-> x<5, N())) == 10
-    assert list(add(repeat(1), N())$[:5]) == [1,2,3,4,5]
+    assert map(pow$(2), range(0, 10))$[-1] == 512
+    assert N()$[10:15] |> list == [10,11,12,13,14]
+    assert N() |> takewhile$((>)$(5)) |> list == [0,1,2,3,4]
+    assert (range(-10,0) :: N())$[5:15] |> sum == -5
+    assert add(repeat(1), N())$[:5] |> list == [1,2,3,4,5]
     assert sum(N()$[5:]$[:5]) == 35
+    assert 12 |> next_mul_of $(5) == 15
     assert collatz(27)
     assert preop(1,2).add() == 3
+    assert vector(3, 4) |> abs == 5

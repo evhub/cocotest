@@ -12,7 +12,9 @@ mod = (%)
 base = int
 
 # Basic Functions:
+prod = reduce$((*))
 zipwith(f, *args) = map((items) -> f(*items), zip(*args))
+zipsum = map$(sum)..zip
 plus1 = plus$(1)
 sqrt(x) = x**0.5
 square = (x) -> x**2
@@ -80,6 +82,12 @@ def N(n=0):
 
 # Recursive Functions:
 @recursive
+def next_mul_of(n, x):
+    if x % n == 0:
+        return x
+    else:
+        return next_mul_of(n, x+1)
+@recursive
 def collatz(n):
     if n == 1:
         return True
@@ -92,3 +100,6 @@ def collatz(n):
 data preop(x, y):
     def add(self):
         return self.x + self.y
+data vector(x, y):
+    def __abs__(self):
+        return (self.x**2 + self.y**2)**.5
