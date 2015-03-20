@@ -29,7 +29,7 @@ def main():
     assert repeat(3)$[2] == 3
     assert sum_(repeat(1)$[:5]) == 5
     assert sum_(takewhile((x)-> x<5, N())) == 10
-    assert map(pow$(2), range(0, 10))$[-1] == 512
+    assert map(pow$(2), range(0, 5)) |> list == [1,2,4,8,16]
     assert N()$[10:15] |> list == [10,11,12,13,14]
     assert N() |> takewhile$((>)$(5)) |> list == [0,1,2,3,4] == range(0,10)$[:5:] |> list
     assert (range(-10, 0) :: N())$[5:15] |> sum == -5
