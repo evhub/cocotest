@@ -103,3 +103,6 @@ data preop(x, y):
 data vector(x, y):
     def __abs__(self):
         return (self.x**2 + self.y**2)**.5
+data triangle(a, b, c):
+    def is_right(self):
+        return self.a**2 + self.b**2 == self.c**2

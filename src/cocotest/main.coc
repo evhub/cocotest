@@ -7,6 +7,7 @@ def main():
     assert 3 `mod` 6 == 3
     assert 5 `mod` 4 == 1
     assert "11" `base` 2 == 3 == 11_2
+    assert 10A_12 == 154 == int("10A", 12)
     assert 5 |> (-)$(2) |> (**)$(2) == 9
     assert range(1, 5) |> prod == 24
     assert plus1(2) == 3
@@ -38,3 +39,4 @@ def main():
     assert collatz(27)
     assert preop(1,2).add() == 3
     assert vector(3, 4) |> abs == 5
+    assert triangle(3, 4, 5).is_right()
