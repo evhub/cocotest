@@ -32,7 +32,7 @@ def main():
     assert sum_(repeat(1)$[:5]) == 5
     assert (sum_(takewhile((x)-> x<5, N()))
             == 10
-            == dropwhile((range(-10, 0) :: N()), (>)$(0))$[:5] |> sum
+            == dropwhile((>)$(0), (range(-10, 0) :: N()))$[:5] |> sum
             )
     assert map(pow$(2), range(0, 5)) |> list == [1,2,4,8,16]
     assert N()$[10:15] |> list == [10,11,12,13,14]
