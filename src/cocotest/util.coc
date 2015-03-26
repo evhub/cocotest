@@ -22,9 +22,11 @@ plus1sq = square..plus1
 sqplus1 = plus1..square
 plus1sq_ = (x) -> x |> plus1 |> square
 sqplus1_ = (x) -> x |> square |> plus1
+clean = methodcaller("strip")
 
 # Partial Applications:
 sum_ = reduce$((+))
+concatsum = reduce$([+])
 add = zipwith$((+))
 
 # Non-Functional Quick Sort:

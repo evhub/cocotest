@@ -23,6 +23,7 @@ def main():
             == [11,22,33]
             == zipsum([1,2,3], [10,20,30]) |> list
             )
+    assert clean("   ab cd ef   ") == "ab cd ef"
     for qsort in [qsort1, qsort2, qsort3]:
         last = 0
         for x in qsort(rand_list(10)):
@@ -34,6 +35,7 @@ def main():
             == 10
             == dropwhile((>)$(0), (range(-10, 0) :: N()))$[:5] |> sum
             )
+    assert "ABCDEFG" |> itemgetter(1, 3, 5) |> concatsum == "BDF"
     assert map(pow$(2), range(0, 5)) |> list == [1,2,4,8,16]
     assert N()$[10:15] |> list == [10,11,12,13,14]
     assert (N() |> takewhile$((>)$(5)) |> list
@@ -48,4 +50,5 @@ def main():
     assert collatz(27)
     assert preop(1, 2).add() == 3
     assert vector(3, 4) |> abs == 5
+    assert vector(1, 2) |> attrgetter("x", "y") == (1, 2)
     assert triangle(3, 4, 5).is_right()
