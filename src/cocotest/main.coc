@@ -52,3 +52,4 @@ def main():
     assert vector(3, 4) |> abs == 5
     assert vector(1, 2) |> attrgetter("x", "y") == (1, 2)
     assert triangle(3, 4, 5).is_right()
+    assert factorial(3) == 6

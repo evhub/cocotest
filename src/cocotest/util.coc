@@ -108,3 +108,11 @@ data vector(x, y):
 data triangle(a, b, c):
     def is_right(self):
         return self.a**2 + self.b**2 == self.c**2
+
+# Match Functions:
+def factorial(*args):
+    match 0 in args:
+        return 1
+    match n is int in args:
+        return n * factorial(n-1)
+    raise TypeError()
