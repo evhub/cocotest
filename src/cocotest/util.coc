@@ -71,6 +71,29 @@ def qsort3(l):
     except StopIteration:
         return iter(())
 
+# Match Quick Sort:
+def qsort4(*args):
+    """Match Quick Sort."""
+    match l=[] in args:
+        return l
+    match [head] + tail in args:
+        return (qsort2([x for x in tail if x <= head])
+                + [head] # The pivot is a list
+                + qsort2([x for x in tail if x > head])
+                )
+
+# Iterator Match Quick Sort:
+def qsort5(*args):
+    """Iterator Match Quick Sort."""
+    try:
+        match [head] :: tail in args:
+            return (qsort3((x for x in tail if x <= head))
+                :: iter((head,)) # The pivot is an iter
+                :: qsort3((x for x in tail if x > head))
+                )
+    except StopIteration:
+        return iter(())
+
 # Infinite Iterators:
 def repeat(elem):
     """Repeat Iterator."""
@@ -115,4 +138,28 @@ def factorial(*args):
         return 1
     match n is int in args:
         return n * factorial(n-1)
+    raise TypeError()
+def classify(value):
+    match _ is tuple in [value]:
+        match () in [value]:
+            return "empty tuple"
+        match (_,) in [value]:
+            return "singleton tuple"
+        match (x,x) in [value]:
+            return "duplicate pair tuple of "+str(x)
+        match (_,_) in [value]:
+            return "pair tuple"
+        else:
+            return "tuple"
+    match _ is list in [value]:
+        match [] in [value]:
+            return "empty list"
+        match [_] in [value]:
+            return "singleton list"
+        match [x,x] in [value]:
+            return "duplicate pair list of "+str(x)
+        match [_,_] in [value]:
+            return "pair list"
+        else:
+            return "list"
     raise TypeError()

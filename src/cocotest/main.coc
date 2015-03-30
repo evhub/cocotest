@@ -24,7 +24,7 @@ def main():
             == zipsum([1,2,3], [10,20,30]) |> list
             )
     assert clean("   ab cd ef   ") == "ab cd ef"
-    for qsort in [qsort1, qsort2, qsort3]:
+    for qsort in [qsort1, qsort2, qsort3, qsort4, qsort5]:
         last = 0
         for x in qsort(rand_list(10)):
             assert x >= last
@@ -53,3 +53,10 @@ def main():
     assert vector(1, 2) |> attrgetter("x", "y") == (1, 2)
     assert triangle(3, 4, 5).is_right()
     assert factorial(3) == 6
+    assert classify(()) == "empty tuple"
+    assert classify([]) == "empty list"
+    assert classify((1,)) == "singleton tuple"
+    assert classify([1,1]) == "duplicate pair list of 1"
+    assert classify((1,2)) == "pair tuple"
+    assert classify([1,2,3]) == "list"
+    assert classify((1,1,1)) == "tuple"
