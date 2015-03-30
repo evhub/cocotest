@@ -131,6 +131,8 @@ data vector(x, y):
     def transform(self, *args):
         match vector(x, y) in args:
             return vector(self.x + x, self.y + y)
+        else:
+            raise TypeError("")
 data triangle(a, b, c):
     def is_right(self):
         return self.a**2 + self.b**2 == self.c**2
@@ -139,13 +141,13 @@ data triangle(a, b, c):
 def factorial1(*args):
     match 0 in args:
         return 1
-    match n is int in args:
+    match n is int in args if n > 0:
         return n * factorial1(n-1)
 def factorial2(*args):
     match (0) in args:
         return 1
     else:
-        match (n is int) in args:
+        match (n is int) in args if n > 0:
             return n * factorial2(n-1)
         else:
             return None
@@ -180,6 +182,6 @@ def classify(value):
             return "set"
     raise TypeError()
 def dictpoint(value):
-    match {"x":x is int, "y":y is int}:
+    match {"x":x is int, "y":y is int} in [value]:
         return (x, y)
     raise TypeError()
