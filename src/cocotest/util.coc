@@ -136,11 +136,19 @@ data triangle(a, b, c):
         return self.a**2 + self.b**2 == self.c**2
 
 # Match Functions:
-def factorial(*args):
+def factorial1(*args):
     match 0 in args:
         return 1
     match n is int in args:
         return n * factorial(n-1)
+def factorial2(*args):
+    match (0) in args:
+        return 1
+    else:
+        match (n is int) in args:
+            return n * factorial(n-1)
+        else:
+            return None
     raise TypeError()
 def classify(value):
     match _ is tuple in [value]:
