@@ -143,40 +143,41 @@ def factorial1(*args):
         return 1
     match n is int in args if n > 0:
         return n * factorial1(n-1)
-def factorial2(*args):
-    match (0) in args:
+def factorial2(value):
+    match (0) in [value]:
         return 1
     else:
-        match (n is int) in args if n > 0:
+        match (n is int) in [value] if n > 0:
             return n * factorial2(n-1)
         else:
             return None
     raise TypeError()
 def classify(value):
-    match _ is tuple in [value]:
-        match () in [value]:
+    args = [value]
+    match _ is tuple in args:
+        match () in args:
             return "empty tuple"
-        match (_,) in [value]:
+        match (_,) in args:
             return "singleton tuple"
-        match (x,x) in [value]:
+        match (x,x) in args:
             return "duplicate pair tuple of "+str(x)
-        match (_,_) in [value]:
+        match (_,_) in args:
             return "pair tuple"
         else:
             return "tuple"
-    match _ is list in [value]:
-        match [] in [value]:
+    match _ is list in args:
+        match [] in args:
             return "empty list"
-        match [_] in [value]:
+        match [_] in args:
             return "singleton list"
-        match [x,x] in [value]:
+        match [x,x] in args:
             return "duplicate pair list of "+str(x)
-        match [_,_] in [value]:
+        match [_,_] in args:
             return "pair list"
         else:
             return "list"
-    match _ is (set, frozenset) in [value]:
-        match {0} in [value]:
+    match _ is (set, frozenset) in args:
+        match {0} in args:
             return "set of 0"
         else:
             return "set"
