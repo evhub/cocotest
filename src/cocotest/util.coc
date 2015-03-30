@@ -179,5 +179,7 @@ def classify(value):
         else:
             return "set"
     raise TypeError()
-def dedict(value):
-
+def dictpoint(value):
+    match {"x":x is int, "y":y is int}:
+        return (x, y)
+    raise TypeError()
