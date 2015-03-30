@@ -140,13 +140,13 @@ def factorial1(*args):
     match 0 in args:
         return 1
     match n is int in args:
-        return n * factorial(n-1)
+        return n * factorial1(n-1)
 def factorial2(*args):
     match (0) in args:
         return 1
     else:
         match (n is int) in args:
-            return n * factorial(n-1)
+            return n * factorial2(n-1)
         else:
             return None
     raise TypeError()
@@ -173,4 +173,11 @@ def classify(value):
             return "pair list"
         else:
             return "list"
+    match _ is (set, frozenset) in [value]:
+        match {0} in [value]:
+            return "set of 0"
+        else:
+            return "set"
     raise TypeError()
+def dedict(value):
+
