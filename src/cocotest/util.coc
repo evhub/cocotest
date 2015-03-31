@@ -29,7 +29,7 @@ sum_ = reduce$((+))
 concatsum = reduce$([+])
 add = zipwith$((+))
 
-# Non-Functional Quick Sort:
+# Quick-Sorts:
 def qsort1(l):
     '''Non-Functional Quick Sort.'''
     if len(l) == 0:
@@ -44,8 +44,6 @@ def qsort1(l):
             else:
                 larges.append(x)
         return qsort1(smalls) + [split] + qsort1(larges)
-
-# Functional Quick Sort:
 def qsort2(l):
     """Functional Quick Sort."""
     if len(l) == 0:
@@ -56,8 +54,6 @@ def qsort2(l):
                 + [head] # The pivot is a list
                 + qsort2([x for x in tail if x > head])
                 )
-
-# Iterator Quick Sort:
 def qsort3(l):
     """Iterator Quick Sort."""
     try:
@@ -70,8 +66,6 @@ def qsort3(l):
                 )
     except StopIteration:
         return iter(())
-
-# Match Quick Sort:
 def qsort4(*args):
     """Match Quick Sort."""
     match l=[] in args:
@@ -81,8 +75,6 @@ def qsort4(*args):
                 + [head] # The pivot is a list
                 + qsort2([x for x in tail if x > head])
                 )
-
-# Iterator Match Quick Sort:
 def qsort5(*args):
     """Iterator Match Quick Sort."""
     try:
@@ -146,11 +138,10 @@ def factorial1(*args):
 def factorial2(value):
     match (0) in [value]:
         return 1
-    else:
-        match (n is int) in [value] if n > 0:
+    else: match (n is int) in [value] if n > 0:
             return n * factorial2(n-1)
-        else:
-            return None
+    else:
+        return None
     raise TypeError()
 def classify(value):
     args = [value]
