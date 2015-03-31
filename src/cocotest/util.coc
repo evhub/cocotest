@@ -139,7 +139,7 @@ def factorial2(value):
     match (0) in [value]:
         return 1
     else: match (n is int) in [value] if n > 0:
-            return n * factorial2(n-1)
+        return n * factorial2(n-1)
     else:
         return None
     raise TypeError()
@@ -177,3 +177,9 @@ def dictpoint(value):
     match {"x":x is int, "y":y is int} in [value]:
         return (x, y)
     raise TypeError()
+
+# Unicode Functions:
+square_u = (x) → x ↑ 2
+neg_u = (⁻)
+neg_square_u = (x) → x ↦ square_u ↦ neg_u
+

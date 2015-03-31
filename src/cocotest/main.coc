@@ -65,3 +65,4 @@ def main():
     assert classify({0}) == "set of 0" == classify(frozenset({0}))
     assert classify({0,1}) == "set" == classify(frozenset({1}))
     assert dictpoint({"x":1, "y":2}) == (1,2)
+    assert -4 == neg_square_u(2) ≠ 4 ∧ 0 ≤ neg_square_u(0) ≤ 0
