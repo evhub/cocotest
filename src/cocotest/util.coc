@@ -132,7 +132,7 @@ data vector(x, y):
         match vector(x, y) in args:
             return vector(self.x + x, self.y + y)
         else:
-            raise TypeError("")
+            raise TypeError()
 data triangle(a, b, c):
     def is_right(self):
         return self.a**2 + self.b**2 == self.c**2
