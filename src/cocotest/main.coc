@@ -66,3 +66,6 @@ def main():
     assert classify({0,1}) == "set" == classify(frozenset({1}))
     assert dictpoint({"x":1, "y":2}) == (1,2)
     assert -4 == neg_square_u(2) ≠ 4 ∧ 0 ≤ neg_square_u(0) ≤ 0
+    iter1 = range(0,10)
+    iter1, iter2 = tee(original)
+    assert iter1$[2:8] |> list == iter2$[2:8] |> list
