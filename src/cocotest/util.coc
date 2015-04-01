@@ -200,8 +200,11 @@ def map_(func, args):
         return []
     match [x] + xs in args:
         return [func(x)] + map_(func, xs)
-    match (x,) :: xs in args:
-        return (func(x),) :: map_(func, xs)
+def duplicate_first(value):
+    match l=([x] + xs) in value:
+        return [x] + l
+    else:
+        raise TypeError()
 
 # Unicode Functions:
 square_u = (x) → x ↑ 2

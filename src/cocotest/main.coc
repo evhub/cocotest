@@ -72,9 +72,10 @@ def main():
     assert classify({0,1}) == "set" == classify(f{1})
     assert classify(s{}) == "empty set" == classify(f{})
     assert dictpoint({"x":1, "y":2}) == (1,2)
+    assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
+    assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)
+    assert duplicate_first([1,2,3]) == [1,1,2,3]
     assert -4 == neg_square_u(2) ≠ 4 ∧ 0 ≤ neg_square_u(0) ≤ 0
     iter1 = range(0,10)
     iter1, iter2 = tee(iter1)
     assert iter1$[2:8] |> list == iter2$[2:8] |> list
-    assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
-    assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)
