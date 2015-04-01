@@ -194,6 +194,17 @@ def dictpoint(value):
     match {"x":x is int, "y":y is int} in value:
         return (x, y)
     raise TypeError()
+def map_(func, args):
+    match () in args:
+        return ()
+    match (x,) + xs in args:
+        return (func(x),) + map_(func, xs)
+    match [] in args:
+        return []
+    match [x] + xs in args:
+        return [func(x)] + map_(func, xs)
+    match (x,) :: xs in args:
+        return (func(x),) :: map_(func, xs)
 
 # Unicode Functions:
 square_u = (x) → x ↑ 2
