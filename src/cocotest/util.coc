@@ -66,19 +66,19 @@ def qsort3(l):
                 )
     except StopIteration:
         return iter(())
-def qsort4(*args):
+def qsort4(l):
     """Match Quick Sort."""
-    match l=[] in args:
+    match [] in l:
         return l
-    match [head] + tail in args:
+    match [head] + tail in l:
         return (qsort2([x for x in tail if x <= head])
                 + [head] # The pivot is a list
                 + qsort2([x for x in tail if x > head])
                 )
-def qsort5(*args):
+def qsort5(l):
     """Iterator Match Quick Sort."""
     try:
-        match [head] :: tail in args:
+        match [head] :: tail in l:
             return (qsort3((x for x in tail if x <= head))
                 :: iter((head,)) # The pivot is an iter
                 :: qsort3((x for x in tail if x > head))
@@ -130,51 +130,50 @@ data triangle(a, b, c):
         return self.a**2 + self.b**2 == self.c**2
 
 # Match Functions:
-def factorial1(*args):
-    match 0 in args:
+def factorial1(value):
+    match 0 in value:
         return 1
-    match n is int in args if n > 0:
+    match n is int in value if n > 0:
         return n * factorial1(n-1)
 def factorial2(value):
-    match (0) in [value]:
+    match (0) in value:
         return 1
-    else: match (n is int) in [value] if n > 0:
+    else: match (n is int) in value if n > 0:
         return n * factorial2(n-1)
     else:
         return None
     raise TypeError()
 def classify(value):
-    args = [value]
-    match _ is tuple in args:
-        match () in args:
+    match _ is tuple in value:
+        match () in value:
             return "empty tuple"
-        match (_,) in args:
+        match (_,) in value:
             return "singleton tuple"
-        match (x,x) in args:
+        match (x,x) in value:
             return "duplicate pair tuple of "+str(x)
-        match (_,_) in args:
+        match (_,_) in value:
             return "pair tuple"
         else:
             return "tuple"
-    match _ is list in args:
-        match [] in args:
+    match _ is list in value:
+        match [] in value:
             return "empty list"
-        match [_] in args:
+        match [_] in value:
             return "singleton list"
-        match [x,x] in args:
+        match [x,x] in value:
             return "duplicate pair list of "+str(x)
-        match [_,_] in args:
+        match [_,_] in value:
             return "pair list"
         else:
             return "list"
-    match _ is (set, frozenset) in args:
-        match {0} in args:
+    match _ is (set, frozenset) in value:
+        match {0} in value:
             return "set of 0"
         else:
             return "set"
     raise TypeError()
 def dictpoint(value):
-    match {"x":x is int, "y":y is int} in [value]:
+    match {"x":x is int, "y":y is int} in value:
         return (x, y)
     raise TypeError()
 
