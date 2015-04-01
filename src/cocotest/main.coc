@@ -79,3 +79,5 @@ def main():
     iter1 = range(0,10)
     iter1, iter2 = tee(iter1)
     assert iter1$[2:8] |> list == iter2$[2:8] |> list
+    \data = 5
+    assert \data == 5
