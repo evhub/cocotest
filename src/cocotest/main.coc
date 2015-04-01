@@ -68,8 +68,8 @@ def main():
     assert classify((1,1,1)) == "tuple"
     assert classify({}) == "empty dict"
     assert classify({"a":1}) == "dict"
-    assert classify({0}) == "set of 0" == classify(f({0}))
-    assert classify({0,1}) == "set" == classify(f({1}))
+    assert classify({0}) == "set of 0" == classify(f{0})
+    assert classify({0,1}) == "set" == classify(f{1})
     assert classify(s{}) == "empty set" == classify(f{})
     assert dictpoint({"x":1, "y":2}) == (1,2)
     assert -4 == neg_square_u(2) ≠ 4 ∧ 0 ≤ neg_square_u(0) ≤ 0
