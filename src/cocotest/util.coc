@@ -175,6 +175,11 @@ def classify(value):
             return "pair list"
         else:
             return "list"
+    match _ is dict in value:
+        match {} in value:
+            return "empty dict"
+        else:
+            return "dict"
     match _ is (set, frozenset) in value:
         match {0} in value:
             return "set of 0"
