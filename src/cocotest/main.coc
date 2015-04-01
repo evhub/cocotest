@@ -4,6 +4,9 @@ def main():
     """Executes Tests."""
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
+    olist = [0,1,2]
+    olist[1] = 5
+    assert olist == [0,5,2]
     assert 1 `plus` 1 == 2
     assert 3 `mod` 6 == 3
     assert 5 `mod` 4 == 1
