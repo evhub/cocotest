@@ -148,9 +148,9 @@ def factorial3(value):
         return 1
     match n is int in value if n > 0:
         return n * factorial3(n-1)
-    match l is (tuple, list) in value if not l:
+    match [l] in value:
         return []
-    match [head] :: tail in value:
+    match [head] + tail in value:
         return [factorial3(head)] + factorial3(tail)
 def classify(value):
     match _ is tuple in value:
