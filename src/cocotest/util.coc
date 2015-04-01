@@ -120,8 +120,8 @@ data preop(x, y):
 data vector(x, y):
     def __abs__(self):
         return (self.x**2 + self.y**2)**.5
-    def transform(self, *args):
-        match vector(x, y) in args:
+    def transform(self, other):
+        match vector(x, y) in other:
             return vector(self.x + x, self.y + y)
         else:
             raise TypeError()
