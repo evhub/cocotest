@@ -143,6 +143,15 @@ def factorial2(value):
     else:
         return None
     raise TypeError()
+def factorial3(value):
+    match 0 in value:
+        return 1
+    match n is int in value if n > 0:
+        return n * factorial3(n-1)
+    match l is (tuple, list) in value if not l:
+        return []
+    match [head] :: tail in value:
+        return [factorial3(head)] + factorial3(tail)
 def classify(value):
     match _ is tuple in value:
         match () in value:
@@ -181,4 +190,3 @@ def dictpoint(value):
 square_u = (x) → x ↑ 2
 neg_u = (⁻)
 neg_square_u = (x) → x ↦ square_u ↦ neg_u
-

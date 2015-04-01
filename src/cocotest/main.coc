@@ -55,6 +55,7 @@ def main():
     assert triangle(3, 4, 5).is_right()
     assert factorial1(3) == 6 == factorial2(3)
     assert factorial1(-1) is None is factorial2(-1)
+    assert factorial3([2,3]) == [2,6]
     assert classify(()) == "empty tuple"
     assert classify([]) == "empty list"
     assert classify((1,)) == "singleton tuple"
