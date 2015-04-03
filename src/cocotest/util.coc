@@ -188,7 +188,8 @@ def classify(value):
 def dictpoint(value):
     match {"x":x is int, "y":y is int} in value:
         return (x, y)
-    raise TypeError()
+    else:
+        raise TypeError()
 def map_(func, args):
     match l and (() or []) in args:
         return l
