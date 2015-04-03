@@ -179,9 +179,7 @@ def classify(value):
         else:
             return "dict"
     match _ is (set, frozenset) in value:
-        match s{} in value:
-            return "empty set"
-        match f{} in value:
+        match s{} or f{} in value:
             return "empty set"
         match {0} in value:
             return "set of 0"
@@ -192,12 +190,10 @@ def dictpoint(value):
         return (x, y)
     raise TypeError()
 def map_(func, args):
-    match () in args:
-        return ()
+    match l and (() or []) in args:
+        return l
     match (x,) + xs in args:
         return (func(x),) + map_(func, xs)
-    match [] in args:
-        return []
     match [x] + xs in args:
         return [func(x)] + map_(func, xs)
 def duplicate_first1(value):
