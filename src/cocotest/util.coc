@@ -202,7 +202,7 @@ def duplicate_first1(value):
     else:
         raise TypeError()
 def duplicate_first2(value):
-    match l is list and [x] :: xs in value:
+    match l=([x] :: xs) is list in value:
         return [x] :: l
     else:
         raise TypeError()
