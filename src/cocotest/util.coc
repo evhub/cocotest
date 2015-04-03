@@ -200,9 +200,14 @@ def map_(func, args):
         return []
     match [x] + xs in args:
         return [func(x)] + map_(func, xs)
-def duplicate_first(value):
+def duplicate_first1(value):
     match l=([x] + xs) in value:
         return [x] + l
+    else:
+        raise TypeError()
+def duplicate_first2(value):
+    match l is list and [x] :: xs in value:
+        return [x] :: l
     else:
         raise TypeError()
 
