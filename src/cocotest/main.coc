@@ -7,9 +7,9 @@ def main():
     olist = [0,1,2]
     olist[1] += 4
     assert olist == [0,5,2]
-    assert 1 `plus` 1 == 2 == 1 `(+)` 1 == 1 `(x,y)->x+y` 1
+    assert 1 `plus` 1 == 2 == 1 `(+)` 1
     assert 3 `mod` 6 == 3 == 3 `(%)` 6
-    assert 5 `mod` 4 == 1 == 5 `(x,y)->x%y` 4
+    assert 5 `mod` 4 == 1 == 5 `(%)` 4
     assert "11" `base` 2 == 3 == 11_2
     assert 10A_12 == 154 == `int` "10A" `12
     assert {"a", 5} |> len == 2
