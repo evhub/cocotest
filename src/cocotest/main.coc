@@ -15,11 +15,11 @@ def main():
     assert {"a", 5} |> len == 2
     assert 5 |> (-)$(2) |> (*)$(2) == -6
     assert 1 `range` 5 |> prod == 24
-    assert `plus1` 2 == 3
+    assert 2 `plus1` == 3
     assert `sqrt` 16 == 4
     assert `square` 3 == 9
-    assert `plus1sq` 3 == 16 == `plus1sq_` 3
-    assert `sqplus1` 3 == 10 == `sqplus1_` 3
+    assert 3 `plus1sq` == 16 == 3 `plus1sq_`
+    assert 3 `sqplus1` == 10 == 3 `sqplus1_`
     assert 3 |> plus1 |> square == 16
     assert sum_([1,7,3,5]) == 16
     assert (add([1,2,3], [10,20,30]) |> list
