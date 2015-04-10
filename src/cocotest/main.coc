@@ -36,7 +36,7 @@ def main():
     assert sum_(repeat(1)$[:5]) == 5
     assert (sum_(takewhile((x)-> x<5, N()))
             == 10
-            == dropwhile((>)$(0), (range(0, -10) :: N()))$[:5] |> sum
+            == dropwhile((>)$(0), (range(-10, 0) :: N()))$[:5] |> sum
             )
     assert "ABCDEFG" |> itemgetter(1, 3, 5) |> concatsum == "BDF"
     assert map(pow$(2), 0 `range` 5) |> list == [1,2,4,8,16]
@@ -45,7 +45,7 @@ def main():
             == [0,1,2,3,4]
             == range(0,10)$[:5:] |> list
             )
-    assert (range(0, -10) :: N())$[5:15] |> sum == -5
+    assert (range(-10, 0) :: N())$[5:15] |> sum == -5
     assert add(repeat(1), N())$[:5] |> list == [1,2,3,4,5]
     assert sum(N()$[5:]$[:5]) == 35
     assert ([$]$(N()))(5, 10) |> list == [5,6,7,8,9]
