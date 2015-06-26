@@ -125,7 +125,7 @@ data vector(x, y):
             return vector(self.x + x, self.y + y)
         else:
             raise TypeError()
-    def __eq__(self, other):
+    def equals(self, other):
         match vector(=self.x, =self.y) in other:
             return True
         else:
