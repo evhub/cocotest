@@ -136,10 +136,8 @@ data triangle(a, b, c):
 
 # Match Functions:
 def factorial1(value):
-    match 0 in value:
-        return 1
-    match n is int in value if n > 0:
-        return n * factorial1(n-1)
+    match 0 in value: return 1
+    match n is int in value if n > 0: return n * factorial1(n-1)
 def factorial2(value):
     match (0) in value:
         return 1
@@ -157,6 +155,19 @@ def factorial3(value):
         return []
     match [head] + tail in value:
         return [factorial3(head)] + factorial3(tail)
+def factorial4(value):
+    case value:
+        match 0: return 1
+        match n is int if n > 0: return n * factorial4(n-1)
+def factorial5(value):
+    case value:
+        match 0:
+            return 1
+        match n is int if n > 0:
+            return n * factorial5(n-1)
+    else:
+        return None
+    raise TypeError()
 def classify(value):
     match _ is tuple in value:
         match () in value:

@@ -59,8 +59,14 @@ def main():
     assert not vector(1, 2) |> vector(3, 4).equals
     assert not (1, 2) |> vector(1, 2).equals
     assert triangle(3, 4, 5).is_right()
-    assert factorial1(3) == 6 == factorial2(3)
-    assert factorial1(-1) is None is factorial2(-1)
+    assert factorial1(3) == 6
+    assert factorial2(3) == 6
+    assert factorial4(3) == 6
+    assert factorial5(3) == 6
+    assert factorial1(-1) is None
+    assert factorial2(-1) is None
+    assert factorial4(-1) is None
+    assert factorial5(-1) is None
     assert factorial3([2,3]) == [2,6]
     assert classify(()) == "empty tuple"
     assert classify([]) == "empty list"
