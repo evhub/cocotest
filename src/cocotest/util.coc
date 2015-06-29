@@ -201,6 +201,20 @@ def classify(value):
             return "set of 0"
         return "set"
     raise TypeError()
+def classify_tuple(value):
+    out = ""
+    case value:
+        match () in value:
+            out += "empty"
+        match (_,) in value:
+            out += "singleton"
+        match (x,x) in value:
+            out += "duplicate pair of "+str(x)
+        match (_,_) in value:
+            out += "pair"
+    else:
+        raise TypeError()
+    return out
 def dictpoint(value):
     match {"x":x is int, "y":y is int} in value:
         return (x, y)
