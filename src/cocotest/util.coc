@@ -204,13 +204,13 @@ def classify(value):
 def classify_tuple(value):
     out = ""
     case value:
-        match () in value:
+        match ():
             out += "empty"
-        match (_,) in value:
+        match (_,):
             out += "singleton"
-        match (x,x) in value:
+        match (x,x):
             out += "duplicate pair of "+str(x)
-        match (_,_) in value:
+        match (_,_):
             out += "pair"
     else:
         raise TypeError()
