@@ -80,10 +80,10 @@ def main():
     assert classify({0}) == "set of 0" == classify(f{0})
     assert classify({0,1}) == "set" == classify(f{1})
     assert classify(s{}) == "empty set" == classify(f{})
-    assert classify_tuple(()) == "empty"
-    assert classify_tuple((1,)) == "singleton"
-    assert classify_tuple((1, 1)) == "duplicate pair of 1"
-    assert classify_tuple((1, 2)) == "pair"
+    assert classify_sequence(()) == "empty"
+    assert classify_sequence((1,)) == "singleton"
+    assert classify_sequence((1, 1)) == "duplicate pair of 1"
+    assert classify_sequence((1, 2)) == "pair"
     assert dictpoint({"x":1, "y":2}) == (1,2)
     assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
     assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)

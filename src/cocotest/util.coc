@@ -201,7 +201,7 @@ def classify(value):
             return "set of 0"
         return "set"
     raise TypeError()
-def classify_tuple(value):
+def classify_sequence(value):
     out = ""
     case value:
         match ():
