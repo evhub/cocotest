@@ -225,9 +225,9 @@ def dictpoint(value):
 def map_(func, args):
     match l and (() or []) in args:
         return l
-    match (x,) + xs in args:
+    match (x,) + xs in args if args `isinstance` tuple:
         return (func(x),) + map_(func, xs)
-    match [x] + xs in args:
+    match [x] + xs in args if args `isinstance` list:
         return [func(x)] + map_(func, xs)
 def duplicate_first1(value):
     match l=([x] + xs) in value:
