@@ -195,7 +195,7 @@ def classify(value):
         else:
             return "dict"
     match _ is (set, frozenset) in value:
-        match s{} or f{} in value:
+        match {} in value:
             return "empty set"
         match {0} in value:
             return "set of 0"
@@ -212,6 +212,8 @@ def classify_sequence(value):
             out += "duplicate pair of "+str(x)
         match (_,_):
             out += "pair"
+        match (_,_,_) or (_,_,_,_):
+            out += "few"
     else:
         raise TypeError()
     return out
