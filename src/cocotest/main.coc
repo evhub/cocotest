@@ -104,5 +104,6 @@ def main():
                                    y):
         return x + y
     assert multiline_backslash_test(1, 2) == 3
+    \\ assert True
     class one_line_class: pass
     assert isinstance(one_line_class(), one_line_class)
