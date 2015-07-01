@@ -195,7 +195,7 @@ def classify(value):
         else:
             return "dict"
     match _ is (set, frozenset) in value:
-        match {} in value:
+        match s{} in value:
             return "empty set"
         match {0} in value:
             return "set of 0"
