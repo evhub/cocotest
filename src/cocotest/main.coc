@@ -47,7 +47,7 @@ def main():
             == [0,1,2,3,4]
             == range(0,10)$[:5:] |> list
             )
-    assert (range(-10, 0) :: N())$[5:15] |> sum == -5 == chain(range(-10, 0), N())$[5:15]
+    assert (range(-10, 0) :: N())$[5:15] |> sum == -5 == chain(range(-10, 0), N())$[5:15] |> sum
     assert add(repeat(1), N())$[:5] |> list == [1,2,3,4,5]
     assert sum(N()$[5:]$[:5]) == 35
     assert ([$]$(N()))(5, 10) |> list == [5,6,7,8,9]
