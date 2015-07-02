@@ -249,7 +249,7 @@ neg_square_u = (x) → x ↦ square_u ↦ neg_u
 def pipe(a, b):
     a |>= b
     return a
-def _ompose(a, b):
+def compose(a, b):
     a ..= b
     return a
 def chain(a, b):
