@@ -21,8 +21,8 @@ def main():
     assert 3 `plus1sq` == 16 == 3 `plus1sq_`
     assert 3 `sqplus1` == 10 == 3 `sqplus1_`
     assert 3 |> plus1 |> square == 16
-    assert (|>)(3, plus1, square) == 16 == _pipe(_pipe(3, plus1), square)
-    assert (..)(sqrt, square, plus1)(3) == 4 == _compose(_compose(sqrt, square), plus1)
+    assert (|>)(3, plus1, square) == 16 == pipe(pipe(3, plus1), square)
+    assert (..)(sqrt, square, plus1)(3) == 4 == compose(compose(sqrt, square), plus1)
     assert sum_([1,7,3,5]) == 16
     assert (add([1,2,3], [10,20,30]) |> list
             == [11,22,33]
@@ -47,7 +47,7 @@ def main():
             == [0,1,2,3,4]
             == range(0,10)$[:5:] |> list
             )
-    assert (range(-10, 0) :: N())$[5:15] |> sum == -5 == _chain(range(-10, 0), N())$[5:15]
+    assert (range(-10, 0) :: N())$[5:15] |> sum == -5 == chain(range(-10, 0), N())$[5:15]
     assert add(repeat(1), N())$[:5] |> list == [1,2,3,4,5]
     assert sum(N()$[5:]$[:5]) == 35
     assert ([$]$(N()))(5, 10) |> list == [5,6,7,8,9]

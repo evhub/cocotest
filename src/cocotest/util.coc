@@ -246,12 +246,12 @@ neg_u = (⁻)
 neg_square_u = (x) → x ↦ square_u ↦ neg_u
 
 # In-Place Functions:
-def _pipe(a, b):
+def pipe(a, b):
     a |>= b
     return a
-def _compose(a, b):
+def _ompose(a, b):
     a ..= b
     return a
-def _chain(a, b):
+def chain(a, b):
     a ::= b
     return a
