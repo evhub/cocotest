@@ -22,7 +22,7 @@ def main():
     assert 3 `sqplus1` == 10 == 3 `sqplus1_`
     assert 3 |> plus1 |> square == 16
     assert (|>)(3, plus1, square) == 16 == pipe(pipe(3, plus1), square)
-    assert (..)(sqrt, square, plus1)(3) == 4 == compose(compose(sqrt, square), plus1)
+    assert (..)(sqrt, square, plus1)(3) == 4 == compose(compose(sqrt, square), plus1)(3)
     assert sum_([1,7,3,5]) == 16
     assert (add([1,2,3], [10,20,30]) |> list
             == [11,22,33]
