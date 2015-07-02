@@ -244,3 +244,14 @@ def duplicate_first2(value):
 square_u = (x) → x ↑ 2
 neg_u = (⁻)
 neg_square_u = (x) → x ↦ square_u ↦ neg_u
+
+# In-Place Functions:
+def _pipe(a, b):
+    a |>= b
+    return a
+def _compose(a, b):
+    a ..= b
+    return a
+def _chain(a, b):
+    a ::= b
+    return a
