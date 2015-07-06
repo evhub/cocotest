@@ -1,10 +1,8 @@
-"""Main Coconut Test File."""
-
 from .util import *
 
-def main(selfdoc):
+def main(doc):
     """Executes Tests."""
-    assert selfdoc == "Main Coconut Test File."
+    assert doc is not None
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
     olist = [0,1,2]
