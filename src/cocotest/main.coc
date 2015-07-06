@@ -2,8 +2,9 @@
 
 from .util import *
 
-def main():
+def main(selfdoc):
     """Executes Tests."""
+    assert selfdoc == "Main Coconut Test File."
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
     olist = [0,1,2]
