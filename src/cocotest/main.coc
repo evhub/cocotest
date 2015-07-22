@@ -110,3 +110,5 @@ def main(doc):
     \\ assert True
     class one_line_class: pass
     assert isinstance(one_line_class(), one_line_class)
+    assert is_empty(empty1())
+    assert is_empty(empty2())
