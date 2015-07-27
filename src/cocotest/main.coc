@@ -29,7 +29,7 @@ def main(doc):
             == [11,22,33]
             == zipsum([1,2,3], [10,20,30]) |> list
             )
-    assert clean("   ab cd ef   ") == "ab cd ef"
+    assert clean("   ab cd ef   ") == "ab cd ef" == "   ab cd ef   " |> clean
     for qsort in [qsort1, qsort2, qsort3, qsort4, qsort5]:
         last = 0
         for x in qsort(rand_list(10)):
