@@ -10,6 +10,7 @@ def rand_list(n):
 plus = (+)
 mod = (%)
 base = int
+a `join` b = a.join(b)
 
 # Basic Functions:
 prod = reduce$((*))
