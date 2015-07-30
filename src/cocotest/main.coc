@@ -14,6 +14,7 @@ def main(doc):
     assert "11" `base` 2 == 3 == 11_2
     assert 10A_12 == 154 ==  "10A" `int` 12
     assert ", " `join` ["1", "2"] == "1, 2"
+    assert `join` ["a","b","c"] == "abc"
     assert {"a", 5} |> len == 2
     assert 5 |> (-)$(2) |> (*)$(2) == -6
     assert 1 `range` 5 |> prod == 24
