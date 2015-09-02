@@ -114,3 +114,6 @@ def main(doc):
     assert isinstance(one_line_class(), one_line_class)
     assert is_empty(empty1())
     assert is_empty(empty2())
+    assert empty() |> depth == 0
+    assert leaf(5) |> depth == 1
+    assert node(leaf(2), node(empty(), leaf(3))) |> depth == 4

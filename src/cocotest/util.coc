@@ -264,3 +264,17 @@ def compose(a, b):
 def chain(a, b):
     a ::= b
     return a
+
+# Algebraic Data Types:
+data empty(): pass
+data leaf(n): pass
+data node(t, t): pass
+tree = (empty, leaf, node)
+
+def depth(t):
+    match tree() in t:
+        return 0
+    match tree(n) in t:
+        return 1
+    match tree(l, r):
+        return 1 + max([depth(l), depth(r)])
