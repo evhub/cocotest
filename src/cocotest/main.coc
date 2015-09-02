@@ -116,4 +116,4 @@ def main(doc):
     assert is_null(null2())
     assert empty() |> depth == 0
     assert leaf(5) |> depth == 1
-    assert node(leaf(2), node(empty(), leaf(3))) |> depth == 4
+    assert node(leaf(2), node(empty(), leaf(3))) |> depth == 3
