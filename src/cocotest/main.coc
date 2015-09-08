@@ -117,3 +117,5 @@ def main(doc):
     assert empty() |> depth == 0
     assert leaf(5) |> depth == 1
     assert node(leaf(2), node(empty(), leaf(3))) |> depth == 3
+    assert maybe(5, square, plus1) == 26
+    assert maybe(None, square, plus1) is None

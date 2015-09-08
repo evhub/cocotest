@@ -278,3 +278,7 @@ def depth(t):
         return 1
     match tree(l, r) in t:
         return 1 + max([depth(l), depth(r)])
+
+# Monads:
+base_maybe(f, x) = f(x) if x is not None else None
+maybe(*fs) = reduce(base_maybe, fs)
