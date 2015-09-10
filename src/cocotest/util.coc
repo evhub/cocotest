@@ -293,7 +293,7 @@ data Nothing():
             return False
 data Just(item):
     def __call__(self, *args):
-        return reduce((|>), args, self.item)
+        return Just <| reduce((|>), args, self.item)
     def __eq__(self, other):
         match Just(item) in other:
             return self.item == item
