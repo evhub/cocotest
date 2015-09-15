@@ -300,3 +300,14 @@ data Just(item):
         else:
             return False
 Maybe = (Nothing, Just)
+
+# Destructuring Assignment
+def head_tail(l):
+    [head] + tail = l
+    return head, tail
+def init_last(l):
+    init + [last] = l
+    return init, last
+def last_two(l):
+    _ + [a, b] = l
+    return a, b
