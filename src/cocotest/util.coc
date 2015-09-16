@@ -308,6 +308,12 @@ def head_tail(l):
 def init_last(l):
     init + [last] = l
     return init, last
-def last_two(l):
+def last_two1(l):
     _ + [a, b] = l
+    return a, b
+
+# Optional explicit assignment
+def expl_ident(x) = x
+def last_two2(l):
+    match _ + [a, b] = l
     return a, b

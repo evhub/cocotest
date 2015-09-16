@@ -125,4 +125,5 @@ def main(doc):
     assert Nothing() <| square <| plus1 == Nothing()
     assert head_tail([1,2,3]) == (1, [2,3])
     assert init_last([1,2,3]) == ([1,2], 3)
-    assert last_two([1,2,3]) == (2, 3)
+    assert last_two1([1,2,3]) == (2, 3) == last_two2([1,2,3])
+    assert expl_ident(5) == 5
