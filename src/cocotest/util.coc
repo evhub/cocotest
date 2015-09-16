@@ -305,6 +305,9 @@ Maybe = (Nothing, Just)
 def head_tail(l):
     [head] + tail = l
     return head, tail
+def head_tail_(l):
+    head, *tail = l
+    return head, tail
 def init_last(l):
     init + [last] = l
     return init, last

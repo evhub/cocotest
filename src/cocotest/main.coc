@@ -123,7 +123,7 @@ def main(doc):
     assert (5, 3) |*> mod == 2 == mod <*| (5, 3)
     assert Just(5) <| square <| plus1 == Just(26)
     assert Nothing() <| square <| plus1 == Nothing()
-    assert head_tail([1,2,3]) == (1, [2,3])
+    assert head_tail([1,2,3]) == (1, [2,3]) == head_tail_([1,2,3])
     assert init_last([1,2,3]) == ([1,2], 3)
     assert last_two([1,2,3]) == (2, 3) == last_two_([1,2,3])
     assert expl_ident(5) == 5
