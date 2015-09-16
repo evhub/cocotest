@@ -64,6 +64,7 @@ def main(doc):
     assert not vector(1, 2) |> vector(3, 4).equals
     assert not (1, 2) |> vector(1, 2).equals
     assert triangle(3, 4, 5).is_right()
+    assert (.)(triangle(3, 4, 5), "is_right")
     assert factorial1(3) == 6
     assert factorial2(3) == 6
     assert factorial4(3) == 6
