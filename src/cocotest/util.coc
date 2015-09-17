@@ -27,7 +27,6 @@ clean = methodcaller("strip")
 
 # Partial Applications:
 sum_ = reduce$((+))
-concatsum = reduce$([+])
 add = zipwith$((+))
 
 # Quick-Sorts:
