@@ -61,9 +61,9 @@ def main(doc):
     assert vector(3, 4) |> abs == 5
     assert vector(1, 2) |> attrgetter("x", "y") == (1, 2)
     assert vector(3, 1) |> vector(1, 2).transform |> itemgetter(0, 1) == (4, 3)
-    assert vector(1, 2) |> vector(1, 2).equals
-    assert not vector(1, 2) |> vector(3, 4).equals
-    assert not (1, 2) |> vector(1, 2).equals
+    assert vector(1, 2) |> vector(1, 2).__eq__
+    assert not vector(1, 2) |> vector(3, 4).__eq__
+    assert not (1, 2) |> vector(1, 2).__eq__
     assert triangle(3, 4, 5).is_right()
     assert (.)(triangle(3, 4, 5), "is_right")
     assert factorial1(3) == 6
