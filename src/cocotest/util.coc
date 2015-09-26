@@ -311,7 +311,7 @@ def last_two(l):
     _ + [a, b] = l
     return a, b
 
-# Optional explicit assignment
+# Optional Explicit Assignment:
 def expl_ident(x) = x
 def last_two_(l):
     match _ + [a, b] = l
@@ -319,3 +319,7 @@ def last_two_(l):
 def dictpoint_(value):
     {"x":x is int, "y":y is int} = value
     return x, y
+
+# Decorator Test:
+@ (f) -> f
+dectest(x) = x
