@@ -134,3 +134,7 @@ def main(doc):
     assert 1 |> [1,2,3][] == 2 == 1 |> [1,2,3]$[]
     assert 1 |> "123"[] == "2" == 1 |> "123"$[]
     assert 5 |> dectest == 5
+    try:
+        raise ValueError()
+    except TypeError, ValueError as err:
+        assert err
