@@ -8,7 +8,6 @@ notifications:
 install:
   - pip install coconut
   - pip install autopep8
-  - pip install ipython
 
 matrix:
   include:
@@ -36,6 +35,8 @@ matrix:
 
     - python: "2.7"
       script:
+        - pip install ipython
+
         - coconut --version
         - coconut --strict --print --code "__coconut__ |> print"
         - echo "__coconut__ |> print" | coconut --strict --print
@@ -58,6 +59,8 @@ matrix:
 
     - python: "3.3"
       script:
+        - pip install ipython
+
         - coconut --version
         - coconut --strict --print --code "__coconut__ |> print"
         - echo "__coconut__ |> print" | coconut --strict --print
@@ -80,6 +83,8 @@ matrix:
 
     - python: "3.4"
       script:
+        - pip install ipython
+
         - coconut --version
         - coconut --strict --print --code "__coconut__ |> print"
         - echo "__coconut__ |> print" | coconut --strict --print
