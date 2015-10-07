@@ -140,3 +140,6 @@ def main(doc):
         assert err
     assert tuple1(1) == (1,) == tuple1_(1)
     assert tuple2(1, 2) == (1, 2) == tuple2_(1, 2)
+    assert htsplit(1,2,3) == (1,[2,3]) == htsplit_(1,2,3)
+    assert iadd(1, 2) == 3 == iadd_(1, 2)
+    assert strmul("a", 3) == "aaa" == strmul_("a", 3)

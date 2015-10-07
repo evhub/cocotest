@@ -328,3 +328,13 @@ def a `tuple2_` b = a, b
 # Decorator Test:
 @ (f) -> f
 dectest(x) = x
+
+# Match Function Definition Tests:
+match def htsplit([head] + tail) = head, tail
+def htsplit_([head] + tail) = head, tail
+match def (x is int) `iadd` (y is int) = x + y
+def (x is int) `iadd_` (y is int) = x + y
+match def strmul(a is str, x is int):
+    return a * x
+def strmul_(a is str, x is int):
+    return a * x
