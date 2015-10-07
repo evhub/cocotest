@@ -7,17 +7,17 @@ def rand_list(n):
     return [random.randrange(10) for x in range(0, n)]
 
 # Infix Functions:
-plus = (+)
-mod = (%)
-base = int
-(a) `join_with` (b="") = b.join(a)
+def plus = (+)
+def mod = (%)
+def base = int
+def (a) `join_with` (b="") = b.join(a)
 
 # Basic Functions:
 prod = reduce$((*))
-zipwith(f, *args) = map((items) -> f(*items), zip(*args))
+def zipwith(f, *args) = map((items) -> f(*items), zip(*args))
 zipsum = map$(sum)..zip
 plus1 = plus$(1)
-sqrt(x) = x**0.5
+def sqrt(x) = x**0.5
 def sqrt_(x) = x**0.5
 square = (x) -> x**2
 plus1sq = square..plus1
@@ -280,8 +280,8 @@ def depth(t):
         return 1 + max([depth(l), depth(r)])
 
 # Monads:
-base_maybe(x, f) = f(x) if x is not None else None
-maybes(*fs) = reduce(base_maybe, fs)
+def base_maybe(x, f) = f(x) if x is not None else None
+def maybes(*fs) = reduce(base_maybe, fs)
 
 data Nothing():
     def __call__(self, *args):
@@ -314,23 +314,26 @@ def last_two(l):
 def delist2(l):
     match list(a, b) = l
     return a, b
+def delist2_(l):
+    list(a, b)  = l
+    return a, b
 
 # Optional Explicit Assignment:
 def expl_ident(x) = x
 def last_two_(l):
-    match _ + [a, b] = l
+    _ + [a, b] = l
     return a, b
 def dictpoint_(value):
     {"x":x is int, "y":y is int} = value
     return x, y
-`tuple1` (a) = a,
-def `tuple1_` (a) = a,
-(a) `tuple2` (b) = a, b
-def (a) `tuple2_` (b) = a, b
+def `tuple1` (a) = a,
+def (a) `tuple1_` = a,
+def (a) `tuple2` (b) = a, b
+def tuple2(a, b) = a, b
 
 # Decorator Test:
 @ (f) -> f
-dectest(x) = x
+def dectest(x) = x
 
 # Match Function Definition Tests:
 match def htsplit([head] + tail) = [head, tail]
