@@ -143,3 +143,7 @@ def main(doc):
     assert htsplit([1,2,3]) == [1,[2,3]] == htsplit_([1,2,3])
     assert iadd(1, 2) == 3 == iadd_(1, 2)
     assert strmul("a", 3) == "aaa" == strmul_("a", 3)
+    try:
+        strmul("a", "b")
+    except MatchError as err:
+        assert err
