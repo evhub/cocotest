@@ -311,6 +311,9 @@ def init_last(l):
 def last_two(l):
     _ + [a, b] = l
     return a, b
+def delist2(l):
+    list(a, b) = l
+    return a, b
 
 # Optional Explicit Assignment:
 def expl_ident(x) = x

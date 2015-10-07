@@ -138,6 +138,7 @@ def main(doc):
         raise ValueError()
     except TypeError, ValueError as err:
         assert err
+    assert delist2([1, 2]) == (1, 2)
     assert tuple1(1) == (1,) == tuple1_(1)
     assert tuple2(1, 2) == (1, 2) == tuple2_(1, 2)
     assert htsplit([1,2,3]) == [1,[2,3]] == htsplit_([1,2,3])
