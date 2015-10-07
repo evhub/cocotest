@@ -7,9 +7,9 @@ def rand_list(n):
     return [random.randrange(10) for x in range(0, n)]
 
 # Infix Functions:
-def plus = (+)
-def mod = (%)
-def base = int
+plus = (+)
+mod = (%)
+base = int
 def (a) `join_with` (b="") = b.join(a)
 
 # Basic Functions:
