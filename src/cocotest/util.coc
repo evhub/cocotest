@@ -329,7 +329,7 @@ def dictpoint_(value):
 def `tuple1` (a) = a,
 def (a) `tuple1_` = a,
 def (a) `tuple2` (b) = a, b
-def tuple2(a, b) = a, b
+def tuple2_(a, b) = a, b
 
 # Decorator Test:
 @ (f) -> f
