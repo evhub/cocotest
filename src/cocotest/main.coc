@@ -20,7 +20,7 @@ def main(doc):
     assert 5 |> (-)$(2) |> (*)$(2) == -6
     assert 1 `range` 5 |> prod == 24
     assert 2 `plus1` == 3
-    assert `sqrt` 16 == 4
+    assert `sqrt` 16 == 4 == `sqrt_` 16
     assert `square` 3 == 9
     assert 3 `plus1sq` == 16 == 3 `plus1sq_`
     assert 3 `sqplus1` == 10 == 3 `sqplus1_`
@@ -138,3 +138,5 @@ def main(doc):
         raise ValueError()
     except TypeError, ValueError as err:
         assert err
+    assert tuple1(1) == (1,) == tuple1_(1)
+    assert tuple2(1, 2) == (1, 2) == tuple2_(1, 2)
