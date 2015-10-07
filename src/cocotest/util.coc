@@ -10,7 +10,7 @@ def rand_list(n):
 plus = (+)
 mod = (%)
 base = int
-a `join_with` (b="") = b.join(a)
+(a) `join_with` (b="") = b.join(a)
 
 # Basic Functions:
 prod = reduce$((*))
@@ -320,10 +320,10 @@ def last_two_(l):
 def dictpoint_(value):
     {"x":x is int, "y":y is int} = value
     return x, y
-`tuple1` a = a,
-def `tuple1_` a = a,
-a `tuple2` b = a, b
-def a `tuple2_` b = a, b
+`tuple1` (a) = a,
+def `tuple1_` (a) = a,
+(a) `tuple2` (b) = a, b
+def (a) `tuple2_` (b) = a, b
 
 # Decorator Test:
 @ (f) -> f
