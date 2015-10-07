@@ -330,8 +330,8 @@ def (a) `tuple2_` (b) = a, b
 dectest(x) = x
 
 # Match Function Definition Tests:
-match def htsplit([head] + tail) = head, tail
-def htsplit_([head] + tail) = head, tail
+match def htsplit([head] + tail) = [head, tail]
+def htsplit_([head] + tail) = [head, tail]
 match def (x is int) `iadd` (y is int) = x + y
 def (x is int) `iadd_` (y is int) = x + y
 match def strmul(a is str, x is int):
