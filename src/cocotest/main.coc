@@ -92,7 +92,8 @@ def main(doc):
     assert classify_sequence((1, 1)) == "duplicate pair of 1"
     assert classify_sequence((1, 2)) == "pair"
     assert classify_sequence((1, 2, 3)) == "few"
-    assert dictpoint({"x":1, "y":2}) == (1,2) == dictpoint_({"x":1, "y":2})
+    assert dictpoint({"x":1, "y":2}) == (1,2)
+    assert dictpoint_({"x":1, "y":2}) == (1,2) == dictpoint__({"x":1, "y":2})
     assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
     assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)
     assert duplicate_first1([1,2,3]) == [1,1,2,3] == duplicate_first2([1,2,3]) |> list

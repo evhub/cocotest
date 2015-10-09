@@ -326,6 +326,8 @@ def last_two_(l):
 def dictpoint_(value):
     {"x":x is int, "y":y is int} = value
     return x, y
+def dictpoint__({"x":x is int, "y":y is int}):
+    return x, y
 def `tuple1` (a) = a,
 def (a) `tuple1_` = a,
 def (a) `tuple2` (b) = a, b
