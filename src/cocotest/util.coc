@@ -303,7 +303,7 @@ Maybe = (Nothing, Just)
 
 # Destructuring Assignment
 def head_tail(l):
-    [head] + tail = l
+    match [head] + tail = l
     return head, tail
 def init_last(l):
     init + [last] = l
@@ -320,9 +320,6 @@ def delist2_(l):
 
 # Optional Explicit Assignment:
 def expl_ident(x) = x
-def last_two_(l):
-    _ + [a, b] = l
-    return a, b
 def dictpoint_(value):
     {"x":x is int, "y":y is int} = value
     return x, y
@@ -338,6 +335,8 @@ def tuple2_(a, b) = a, b
 def dectest(x) = x
 
 # Match Function Definition Tests:
+def last_two_(_ + [a, b]):
+    return a, b
 match def htsplit([head] + tail) = [head, tail]
 def htsplit_([head] + tail) = [head, tail]
 match def (x is int) `iadd` (y is int) = x + y
