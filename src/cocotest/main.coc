@@ -151,5 +151,5 @@ def main(doc):
         strmul("a", "b")
     except MatchError as err:
         assert err
-        assert err.pattern == "def strmul_(a is str, x is int):"
+        assert err.pattern == "match def strmul(a is str, x is int):"
         assert err.value == ("a", "b")
