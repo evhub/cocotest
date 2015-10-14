@@ -152,17 +152,14 @@ def main(doc):
     try:
         strmul("a", "b")
     except MatchError as err:
-        assert err
         assert err.pattern == "match def strmul(a is str, x is int):"
         assert err.value == ("a", "b")
     else:
         assert False
     assert (| -1, 0, |) :: range(1, 5) |> list == [-1, 0, 1, 2, 3, 4]
     laz = lazy()
-    assert laz
     assert not laz.done
     lazl = laz.list()
-    assert lazl
     assert lazl$[:3] |> list == [1, 2, 3]
     assert not laz.done
     assert lazl |> list == [None]
