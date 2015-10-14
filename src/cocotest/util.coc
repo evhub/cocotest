@@ -301,7 +301,7 @@ data Just(item):
             return False
 Maybe = (Nothing, Just)
 
-# Destructuring Assignment
+# Destructuring Assignment:
 def head_tail(l):
     match [head] + tail = l
     return head, tail
@@ -330,11 +330,11 @@ def (a) `tuple1_` = a,
 def (a) `tuple2` (b) = a, b
 def tuple2_(a, b) = a, b
 
-# Decorator Test:
+# Enhanced Decorators:
 @ (f) -> f
 def dectest(x) = x
 
-# Match Function Definition Tests:
+# Match Function Definition:
 def last_two_(_ + [a, b]):
     return a, b
 match def htsplit([head] + tail) = [head, tail]
@@ -345,3 +345,11 @@ match def strmul(a is str, x is int):
     return a * x
 def strmul_(a is str, x is int):
     return a * x
+
+# Lazy Lists:
+global lazy_done
+lazy_done = False
+def finish_lazy():
+    global lazy_done
+    lazy_done = True
+do_lazy = (| 1, 2, 3, finish_lazy() |)
