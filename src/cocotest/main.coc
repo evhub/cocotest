@@ -157,9 +157,13 @@ def main(doc):
         assert err.value == ("a", "b")
     else:
         assert False
-    assert not lazy_done
-    assert do_lazy$[:3] |> list == [1, 2, 3]
-    assert not lazy_done
-    assert do_lazy |> list == [None]
-    assert lazy_done
     assert (| -1, 0, |) :: range(1, 5) |> list == [-1, 0, 1, 2, 3, 4]
+    laz = lazy()
+    assert laz
+    assert not laz.done
+    lazl = laz.list()
+    assert lazl
+    assert lazl$[:3] |> list == [1, 2, 3]
+    assert not laz.done
+    assert lazl |> list == [None]
+    assert laz.done

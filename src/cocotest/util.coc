@@ -347,9 +347,9 @@ def strmul_(a is str, x is int):
     return a * x
 
 # Lazy Lists:
-global lazy_done
-lazy_done = False
-def finish_lazy():
-    global lazy_done
-    lazy_done = True
-do_lazy = (| 1, 2, 3, finish_lazy() |)
+class lazy:
+    done = False
+    def finish(self):
+        self.done = True
+    def list(self):
+        return (| 1, 2, 3, self.finish() |)
