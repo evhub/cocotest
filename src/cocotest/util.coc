@@ -101,6 +101,9 @@ def N(n=0):
         n += 1
 def N_(n=0):
     return (n,) :: N_(n+1)
+def preN(it):
+    it ::= N()
+    return it
 
 # Recursive Functions:
 @recursive
