@@ -93,14 +93,14 @@ def repeat(elem):
     while True:
         yield elem
 def repeat_(elem):
-    return (| elem |) :: repeat_(elem)
+    return (elem,) :: repeat_(elem)
 def N(n=0):
     """Natural Numbers."""
     while True:
         yield n
         n += 1
 def N_(n=0):
-    return (| n |) :: N_(n+1)
+    return (n,) :: N_(n+1)
 
 # Recursive Functions:
 @recursive
