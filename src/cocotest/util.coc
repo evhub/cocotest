@@ -258,6 +258,11 @@ def duplicate_first2(value):
         return [x] :: l
     else:
         raise TypeError()
+def one_to_five(l):
+    match [1] + m + [5] in l:
+        return m
+    else:
+        return False
 
 # Unicode Functions:
 square_u = (x) → x ↑ 2
@@ -365,6 +370,11 @@ class lazy:
         return (| 1, 2, 3, self.finish() |)
 def is_empty(i):
     match (||) in i:
+        return True
+    else:
+        return False
+def is_one(i):
+    match (| 1 |) in i:
         return True
     else:
         return False

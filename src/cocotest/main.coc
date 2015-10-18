@@ -103,6 +103,9 @@ def main(doc):
     assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
     assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)
     assert duplicate_first1([1,2,3]) == [1,1,2,3] == duplicate_first2([1,2,3]) |> list
+    assert one_to_five([1,2,3,4,5]) == [2,3,4]
+    assert not one_to_five([0,1,2,3,4,5])
+    assert one_to_five([1,5]) == []
     assert -4 == neg_square_u(2) ≠ 4 ∧ 0 ≤ neg_square_u(0) ≤ 0
     iter1 = range(0,10)
     iter1, iter2 = tee(iter1)
@@ -172,3 +175,7 @@ def main(doc):
     assert is_empty(iter())
     assert is_empty(())
     assert not is_empty([1])
+    assert is_one(iter([1]))
+    assert not is_one(iter())
+    assert not is_one([])
+    assert is_one([1])
