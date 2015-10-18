@@ -104,6 +104,9 @@ def N_(n=0):
 def preN(it):
     it ::= N()
     return it
+def map_iter(func, args):
+    match (| x |) :: xs in args:
+        return (| func(x) |) :: map_iter(func, xs)
 
 # Recursive Functions:
 @recursive

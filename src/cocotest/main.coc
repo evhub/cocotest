@@ -58,6 +58,7 @@ def main(doc):
     assert sum(N()$[5:]$[:5]) == 35 == sum(N_()$[5:]$[:5])
     assert N()$[](slice(5, 10)) |> list == [5,6,7,8,9] == list(range(0, 15))[](slice(5, 10))
     assert preN(range(-5, 0))$[1:10] |> list == [-4,-3,-2,-1,0,1,2,3,4]
+    assert map_iter((*)$(2), N())$[:5] |> list == [0,2,4,6,8]
     assert 12 |> next_mul_of $(5) == 15
     assert collatz(27)
     assert preop(1, 2).add() == 3
@@ -97,6 +98,8 @@ def main(doc):
     assert classify_sequence((1, 2, 3)) == "few"
     assert dictpoint({"x":1, "y":2}) == (1,2)
     assert dictpoint_({"x":1, "y":2}) == (1,2) == dictpoint__({"x":1, "y":2})
+    assert map_((+)$(1), []) == []
+    assert map_((+)$(1), ()) == ()
     assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
     assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)
     assert duplicate_first1([1,2,3]) == [1,1,2,3] == duplicate_first2([1,2,3]) |> list
