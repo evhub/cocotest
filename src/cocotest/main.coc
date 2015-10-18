@@ -172,10 +172,10 @@ def main(doc):
     assert not laz.done
     assert lazl |> list == [None]
     assert laz.done
-    assert is_empty(iter())
+    assert is_empty(iter(()))
     assert is_empty(())
     assert not is_empty([1])
     assert is_one(iter([1]))
-    assert not is_one(iter())
+    assert not is_one(iter(()))
     assert not is_one([])
     assert is_one([1])
