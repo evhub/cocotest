@@ -179,3 +179,7 @@ def main(doc):
     assert not is_one(iter(()))
     assert not is_one([])
     assert is_one([1])
+    assert not isinstance(map((+)$(2), [1,2,3]), list)
+    assert not isinstance(range(10), list)
+    assert isinstance(10**100, int)
+    assert chr(1000)
