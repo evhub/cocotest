@@ -101,6 +101,10 @@ def N(n=0):
         n += 1
 def N_(n=0):
     return (n,) :: N_(n+1)
+def N__(n=0):
+    it = n,
+    it ::= N__(n+1)
+    return it
 def preN(it):
     it ::= N()
     return it

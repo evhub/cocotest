@@ -59,6 +59,7 @@ def main(doc):
     assert N()$[](slice(5, 10)) |> list == [5,6,7,8,9] == list(range(0, 15))[](slice(5, 10))
     assert preN(range(-5, 0))$[1:10] |> list == [-4,-3,-2,-1,0,1,2,3,4]
     assert map_iter((*)$(2), N())$[:5] |> list == [0,2,4,6,8]
+    assert N()$[:100] == N_()$[:100] == N__()$[:100]
     assert 12 |> next_mul_of $(5) == 15
     assert collatz(27)
     assert preop(1, 2).add() == 3
