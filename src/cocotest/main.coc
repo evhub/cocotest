@@ -183,3 +183,10 @@ def main(doc):
     assert not isinstance(range(10), list)
     assert isinstance(10**100, int)
     assert chr(1000)
+    assert 3 + 4i |> abs == 5
+    assert 3.14j == 3.14i
+    assert 10.j == 10.i
+    assert 10j == 10i
+    assert .001j == .001i
+    assert 1e100j == 1e100i
+    assert 3.14e-10j == 3.14e-10i
