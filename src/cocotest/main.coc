@@ -4,6 +4,8 @@ def main(doc):
     """Executes Tests."""
     assert __coconut__
     assert __coconut_version__
+    assert "__coconut__" in globals()
+    assert "__coconut__" not in locals()
     assert doc is not None
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
