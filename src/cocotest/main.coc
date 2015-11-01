@@ -201,3 +201,4 @@ def main(doc):
     assert .001j == .001i
     assert 1e100j == 1e100i
     assert 3.14e-10j == 3.14e-10i
+    print("<success>")
