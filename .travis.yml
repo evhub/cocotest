@@ -29,7 +29,7 @@ matrix:
         - coconut src/cocotest/__init__.coc run_build/cocotest --strict
         - coconut src/cocotest/main.coc run_build/cocotest --strict
         - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coocnut --run run_build/runner.coc --nowrite --strict
+        - coconut --run run_build/runner.coc --nowrite --strict
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
@@ -63,7 +63,7 @@ matrix:
         - coconut src/cocotest/__init__.coc run_build/cocotest --strict
         - coconut src/cocotest/main.coc run_build/cocotest --strict
         - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coocnut --run run_build/runner.coc --nowrite --strict
+        - coconut --run run_build/runner.coc --nowrite --strict
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
@@ -97,7 +97,7 @@ matrix:
         - coconut src/cocotest/__init__.coc run_build/cocotest --strict
         - coconut src/cocotest/main.coc run_build/cocotest --strict
         - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coocnut --run run_build/runner.coc --nowrite --strict
+        - coconut --run run_build/runner.coc --nowrite --strict
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
@@ -131,7 +131,7 @@ matrix:
         - coconut src/cocotest/__init__.coc run_build/cocotest --strict
         - coconut src/cocotest/main.coc run_build/cocotest --strict
         - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coocnut --run run_build/runner.coc --nowrite --strict
+        - coconut --run run_build/runner.coc --nowrite --strict
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
