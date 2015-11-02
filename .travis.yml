@@ -26,10 +26,11 @@ matrix:
         - coconut src/cocotest/util.coc file_build/cocotest --strict
         - python -tt file_build/runner.py
 
-        - coconut src/cocotest/__init__.coc run_build/cocotest --strict
-        - coconut src/cocotest/main.coc run_build/cocotest --strict
-        - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coconut --run run_build/runner.coc --nowrite --strict
+        - coconut src/cocotest run_build/cocotest --strict
+        - cp src/runner.coc run_build/runner.coc
+        - cd run_build
+        - coconut --run runner.coc --nowrite --strict
+        - cd ..
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
@@ -60,10 +61,11 @@ matrix:
         - coconut src/cocotest/util.coc file_build/cocotest --strict
         - python -tt file_build/runner.py
 
-        - coconut src/cocotest/__init__.coc run_build/cocotest --strict
-        - coconut src/cocotest/main.coc run_build/cocotest --strict
-        - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coconut --run run_build/runner.coc --nowrite --strict
+        - coconut src/cocotest run_build/cocotest --strict
+        - cp src/runner.coc run_build/runner.coc
+        - cd run_build
+        - coconut --run runner.coc --nowrite --strict
+        - cd ..
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
@@ -94,10 +96,11 @@ matrix:
         - coconut src/cocotest/util.coc file_build/cocotest --strict
         - python -tt file_build/runner.py
 
-        - coconut src/cocotest/__init__.coc run_build/cocotest --strict
-        - coconut src/cocotest/main.coc run_build/cocotest --strict
-        - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coconut --run run_build/runner.coc --nowrite --strict
+        - coconut src/cocotest run_build/cocotest --strict
+        - cp src/runner.coc run_build/runner.coc
+        - cd run_build
+        - coconut --run runner.coc --nowrite --strict
+        - cd ..
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
@@ -128,10 +131,11 @@ matrix:
         - coconut src/cocotest/util.coc file_build/cocotest --strict
         - python -tt file_build/runner.py
 
-        - coconut src/cocotest/__init__.coc run_build/cocotest --strict
-        - coconut src/cocotest/main.coc run_build/cocotest --strict
-        - coconut src/cocotest/util.coc run_build/cocotest --strict
-        - coconut --run run_build/runner.coc --nowrite --strict
+        - coconut src/cocotest run_build/cocotest --strict
+        - cp src/runner.coc run_build/runner.coc
+        - cd run_build
+        - coconut --run runner.coc --nowrite --strict
+        - cd ..
 
         - coconut src folder_build --strict
         - python -tt folder_build/runner.py
