@@ -1,7 +1,8 @@
+import sys
 from .util import *
 
-def main(doc):
-    """Executes Tests."""
+def main_test():
+    """Executes the main test suite."""
     assert "\n" == (
 
 '''
@@ -13,7 +14,6 @@ def main(doc):
     assert __coconut_version__
     assert "__coconut__" in globals()
     assert "__coconut__" not in locals()
-    assert doc is not None
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
     olist = [0,1,2]
@@ -202,4 +202,15 @@ def main(doc):
     assert .001j == .001i
     assert 1e100j == 1e100i
     assert 3.14e-10j == 3.14e-10i
+
+def main(doc):
+    """Executes Tests."""
+    assert doc
+    main_test()
+    if sys.version_info < (3,):
+        from py2_test import py2_test
+        py2_test()
+    else:
+        from py3_test import py3_test
+        py3_test()
     print("<success>")
