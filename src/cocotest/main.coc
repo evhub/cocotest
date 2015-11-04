@@ -208,9 +208,9 @@ def main(doc):
     assert doc
     main_test()
     if sys.version_info < (3,):
-        from py2_test import py2_test
+        from .py2_test import py2_test
         py2_test()
     else:
-        from py3_test import py3_test
+        from .py3_test import py3_test
         py3_test()
     print("<success>")
