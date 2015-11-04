@@ -25,6 +25,7 @@ sqplus1 = plus1..square
 plus1sq_ = (x) -> x |> plus1 |> square
 sqplus1_ = (x) -> x |> square |> plus1
 clean = methodcaller("strip")
+add2 = (x) -> (y) -> x + y
 
 # Partial Applications:
 sum_ = reduce$((+))
