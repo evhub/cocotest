@@ -16,6 +16,7 @@ def main_test():
     assert "__coconut__" not in locals()
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
+    assert set((1, 2, 3)) == {1, 2, 3}
     olist = [0,1,2]
     olist[1] += 4
     assert olist == [0,5,2]
