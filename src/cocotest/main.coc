@@ -14,6 +14,10 @@ def main_test():
     assert __coconut_version__
     assert "__coconut__" in globals()
     assert "__coconut__" not in locals()
+    x = 5
+    assert x == 5
+    x == 6
+    assert x == 5
     assert r"hello, world" == "hello, world" == "hello," " " "world"
     assert {"a":5}["a"] == 5
     assert set((1, 2, 3)) == {1, 2, 3}
