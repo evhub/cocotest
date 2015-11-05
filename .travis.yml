@@ -15,6 +15,8 @@ matrix:
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
         - rm src/cocotest/py3_test.coc
+        - cp src src_target
+        - rm src/cocotest/py2_test.coc
 
       script:
         - coconut --version
@@ -27,11 +29,10 @@ matrix:
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
         - coconut src/cocotest/util.coc file_build/cocotest --strict
-        - coconut src/cocotest/py2_test.coc file_build/cocotest --strict --target 2
+        - coconut src_target/cocotest/py2_test.coc file_build/cocotest --strict --target 2
         - python -tt file_build/runner.py
 
-        - cp src/cocotest/py2_test.coc src/cocotest/py2_test.coc.not
-        - rm src/cocotest/py2_test.coc
+        - cp file_build/cocotest/py2_test.py src/cocotest/py2_test.py
 
         - coconut src/cocotest run_build/cocotest --strict
         - cp src/runner.coc run_build/runner.coc
@@ -45,9 +46,7 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - python -tt autopep8_build/runner.py
 
-        - cp src/cocotest/py2_test.coc.not src/cocotest/py2_test.coc
-
-        - coconut src target_build --strict --print --target 2
+        - coconut src_target target_build --strict --print --target 2
         - python -tt target_build/runner.py
 
     - python: "2.7"
@@ -58,6 +57,8 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - pip install ipython
         - rm src/cocotest/py3_test.coc
+        - cp src src_target
+        - rm src/cocotest/py2_test.coc
 
       script:
         - coconut --version
@@ -71,11 +72,10 @@ matrix:
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
         - coconut src/cocotest/util.coc file_build/cocotest --strict
-        - coconut src/cocotest/py2_test.coc file_build/cocotest --strict --target 2
+        - coconut src_target/cocotest/py2_test.coc file_build/cocotest --strict --target 2
         - python -tt file_build/runner.py
 
-        - cp src/cocotest/py2_test.coc src/cocotest/py2_test.coc.not
-        - rm src/cocotest/py2_test.coc
+        - cp file_build/cocotest/py2_test.py src/cocotest/py2_test.py
 
         - coconut src/cocotest run_build/cocotest --strict
         - cp src/runner.coc run_build/runner.coc
@@ -89,9 +89,7 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - python -tt autopep8_build/runner.py
 
-        - cp src/cocotest/py2_test.coc.not src/cocotest/py2_test.coc
-
-        - coconut src target_build --strict --print --target 2
+        - coconut src_target target_build --strict --print --target 2
         - python -tt target_build/runner.py
 
     - python: "3.3"
@@ -102,6 +100,8 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - pip install ipython
         - rm src/cocotest/py2_test.coc
+        - cp src src_target
+        - rm src/cocotest/py3_test.coc
 
       script:
         - coconut --version
@@ -115,8 +115,10 @@ matrix:
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
         - coconut src/cocotest/util.coc file_build/cocotest --strict
-        - coconut src/cocotest/py3_test.coc file_build/cocotest --strict --target 3
+        - coconut src_target/cocotest/py3_test.coc file_build/cocotest --strict --target 3
         - python -tt file_build/runner.py
+
+        - cp file_build/cocotest/py3_test.py src/cocotest/py3_test.py
 
         - cp src/cocotest/py3_test.coc src/cocotest/py3_test.coc.not
         - rm src/cocotest/py3_test.coc
@@ -135,7 +137,7 @@ matrix:
 
         - cp src/cocotest/py3_test.coc.not src/cocotest/py3_test.coc
 
-        - coconut src target_build --strict --print --target 3
+        - coconut src_target target_build --strict --print --target 3
         - python -tt target_build/runner.py
 
     - python: "3.4"
@@ -146,6 +148,8 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - pip install ipython
         - rm src/cocotest/py2_test.coc
+        - cp src src_target
+        - rm src/cocotest/py3_test.coc
 
       script:
         - coconut --version
@@ -159,8 +163,10 @@ matrix:
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
         - coconut src/cocotest/util.coc file_build/cocotest --strict
-        - coconut src/cocotest/py3_test.coc file_build/cocotest --strict --target 3
+        - coconut src_target/cocotest/py3_test.coc file_build/cocotest --strict --target 3
         - python -tt file_build/runner.py
+
+        - cp file_build/cocotest/py3_test.py src/cocotest/py3_test.py
 
         - cp src/cocotest/py3_test.coc src/cocotest/py3_test.coc.not
         - rm src/cocotest/py3_test.coc
@@ -179,5 +185,5 @@ matrix:
 
         - cp src/cocotest/py3_test.coc.not src/cocotest/py3_test.coc
 
-        - coconut src target_build --strict --print --target 3
+        - coconut src_target target_build --strict --print --target 3
         - python -tt target_build/runner.py
