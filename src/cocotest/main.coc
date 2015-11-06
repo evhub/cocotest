@@ -35,6 +35,7 @@ def main_test():
     assert ["a","b","c"] `join_with` == "abc"
     assert {"a", 5} |> len == 2
     assert 5 |> (-)$(2) |> (*)$(2) == -6
+    assert 5 |> swap2((-))$(2) |> (*)$(2) == 6 == 5 |> swap2_((-))$(2) |> (*)$(2)
     assert 1 `range` 5 |> prod == 24
     assert 2 `plus1` == 3
     assert `sqrt` 16 == 4 == `sqrt_` 16
