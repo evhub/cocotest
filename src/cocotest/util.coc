@@ -387,8 +387,8 @@ def is_one(i):
         return False
 
 # Constructed Data Type
-def datamaker(datatype, cls):
-    return super(datatype, cls).__new__$(cls)
+def datamaker(cls):
+    return super(cls, cls).__new__$(cls)
 data trilen(h):
     def __new__(cls, a, b):
-        return (a**2 + b**2)**0.5 |> datamaker(trilen, cls)
+        return (a**2 + b**2)**0.5 |> datamaker(cls)
