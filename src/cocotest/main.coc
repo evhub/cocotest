@@ -213,7 +213,7 @@ def main_test():
     assert text == "abc"
     assert first == 1
     assert rest == [2, 3]
-    assert trilen(3, 4).h == 5
+    assert trilen(3, 4).h == 5 == datamaker(trilen)(5).h
 
 def main(doc):
     """Executes Tests."""
