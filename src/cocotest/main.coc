@@ -75,6 +75,7 @@ def main_test():
     assert add(repeat(1), N())$[:5] |> list == [1,2,3,4,5] == add(repeat(1), N_())$[:5] |> list
     assert sum(N()$[5:]$[:5]) == 35 == sum(N_()$[5:]$[:5])
     assert N()$[](slice(5, 10)) |> list == [5,6,7,8,9] == list(range(0, 15))[](slice(5, 10))
+    assert N()$[slice(5, 10)] |> list == [5,6,7,8,9] == list(range(0, 15))[slice(5, 10)]
     assert preN(range(-5, 0))$[1:10] |> list == [-4,-3,-2,-1,0,1,2,3,4]
     assert map_iter((*)$(2), N())$[:5] |> list == [0,2,4,6,8]
     assert N()$[:100] |> tuple == N_()$[:100] |> tuple == N__()$[:100] |> tuple
