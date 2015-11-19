@@ -43,6 +43,12 @@ matrix:
         - cp file_build/cocotest/py2_test.py folder_build/cocotest/py2_test.py
         - python -tt folder_build/runner.py
 
+        - coconut src force_build --strict --force
+        - cp file_build/cocotest/py2_test.py force_build/cocotest/py2_test.py
+        - python -tt force_build/runner.py
+        - coconut src force_build --strict --force
+        - python -tt force_build/runner.py
+
         - coconut src autopep8_build --strict --autopep8
         - cp file_build/cocotest/py2_test.py autopep8_build/cocotest/py2_test.py
         - python -tt autopep8_build/runner.py
@@ -86,6 +92,12 @@ matrix:
         - coconut src folder_build --strict
         - cp file_build/cocotest/py2_test.py folder_build/cocotest/py2_test.py
         - python -tt folder_build/runner.py
+
+        - coconut src force_build --strict --force
+        - cp file_build/cocotest/py2_test.py force_build/cocotest/py2_test.py
+        - python -tt force_build/runner.py
+        - coconut src force_build --strict --force
+        - python -tt force_build/runner.py
 
         - coconut src autopep8_build --strict --autopep8
         - cp file_build/cocotest/py2_test.py autopep8_build/cocotest/py2_test.py
@@ -131,6 +143,12 @@ matrix:
         - cp file_build/cocotest/py3_test.py folder_build/cocotest/py3_test.py
         - python -tt folder_build/runner.py
 
+        - coconut src force_build --strict --force
+        - cp file_build/cocotest/py3_test.py force_build/cocotest/py3_test.py
+        - python -tt force_build/runner.py
+        - coconut src force_build --strict --force
+        - python -tt force_build/runner.py
+
         - coconut src autopep8_build --strict --autopep8
         - cp file_build/cocotest/py3_test.py autopep8_build/cocotest/py3_test.py
         - python -tt autopep8_build/runner.py
@@ -174,6 +192,12 @@ matrix:
         - coconut src folder_build --strict
         - cp file_build/cocotest/py3_test.py folder_build/cocotest/py3_test.py
         - python -tt folder_build/runner.py
+
+        - coconut src force_build --strict --force
+        - cp file_build/cocotest/py3_test.py force_build/cocotest/py3_test.py
+        - python -tt force_build/runner.py
+        - coconut src force_build --strict --force
+        - python -tt force_build/runner.py
 
         - coconut src autopep8_build --strict --autopep8
         - cp file_build/cocotest/py3_test.py autopep8_build/cocotest/py3_test.py
