@@ -216,7 +216,8 @@ def main_test():
     assert rest == [2, 3]
     assert trilen(3, 4).h == 5 == datamaker(trilen)(5).h
     assert bytes(3) == b"\x00\x00\x00"
-    assert str(b"3") == "b'3'"
+    assert isinstance("a", str)
+    assert isinstance(b"a", bytes)
 
 def main(doc):
     """Executes Tests."""
