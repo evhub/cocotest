@@ -393,7 +393,7 @@ data trilen(h):
 
 # Inheritance:
 class A:
-    def do(self):
+    def true(self):
         return True
 class B(A):
     pass
