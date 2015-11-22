@@ -386,7 +386,14 @@ def is_one(i):
     else:
         return False
 
-# Constructed Data Type
+# Constructed Data Types:
 data trilen(h):
     def __new__(cls, a, b):
         return (a**2 + b**2)**0.5 |> datamaker(cls)
+
+# Inheritance:
+class A:
+    def do(self):
+        return True
+class B(A):
+    pass

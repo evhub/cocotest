@@ -218,6 +218,8 @@ def main_test():
     assert bytes(3) == b"\x00\x00\x00"
     assert isinstance("a", str)
     assert isinstance(b"a", bytes)
+    assert A.do()
+    assert B.do()
 
 def main(doc):
     """Executes Tests."""
