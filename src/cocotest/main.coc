@@ -220,6 +220,9 @@ def main_test():
     assert isinstance(b"a", bytes)
     assert A().true()
     assert B().true()
+    assert glob_a == 0 == glob_b
+    set_globs(2)
+    assert glob_a == 2 == glob_b
 
 def main(doc):
     """Executes Tests."""

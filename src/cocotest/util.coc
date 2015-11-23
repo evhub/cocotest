@@ -397,3 +397,12 @@ class A:
         return True
 class B(A):
     pass
+
+# Parenthesized Globals:
+glob_a = 0
+glob_b = 0
+def set_globs(x):
+    global (glob_a,
+            glob_b)
+    glob_a = x
+    glob_b = x
