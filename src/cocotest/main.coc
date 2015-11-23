@@ -220,8 +220,13 @@ def main_test():
     assert isinstance(b"a", bytes)
     assert A().true()
     assert B().true()
-    global (glob_a, glob_b)
+    global (glob_a,
+            glob_b)
+    glob_a, glob_b = 0, 0
     assert glob_a == 0 == glob_b
+    def set_globs(x):
+        global (glob_a, glob_b)
+        glob_a, glob_b = x, x
     set_globs(2)
     assert glob_a == 2 == glob_b
 
