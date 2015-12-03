@@ -10,6 +10,8 @@ def main_test():
 
 ) == """
 """
+    assert "\n " == """
+ """
     assert __coconut__
     assert __coconut_version__
     assert "__coconut__" in globals()
