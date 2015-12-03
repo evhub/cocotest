@@ -3,15 +3,6 @@ from .util import *
 
 def main_test():
     """Executes the main test suite."""
-    assert "\n" == (
-
-'''
-'''
-
-) == """
-"""
-    assert "\n " == """
- """
     assert __coconut__
     assert __coconut_version__
     assert "__coconut__" in globals()
@@ -21,6 +12,16 @@ def main_test():
     x == 6
     assert x == 5
     assert r"hello, world" == "hello, world" == "hello," " " "world"
+    assert "\n" == (
+
+'''
+'''
+
+) == """
+"""
+    assert "\n " == """
+ """
+    assert "\\" "\"" == "\\\""
     assert {"a":5}["a"] == 5
     assert set((1, 2, 3)) == {1, 2, 3}
     olist = [0,1,2]
