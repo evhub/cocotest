@@ -232,7 +232,7 @@ def main_test():
         glob_a, glob_b = x, x
     set_globs(2)
     assert glob_a == 2 == glob_b
-    assert (-)(1) == -1 == (-)$(2)(1)
+    assert (-)(1) == -1 == (-)$(1)(2)
     out0 = grid() |> grid_trim$(xmax=5, ymax=5)
     assert out0 == [
      [pt(x=0, y=0), pt(x=0, y=1), pt(x=0, y=2), pt(x=0, y=3), pt(x=0, y=4)],
