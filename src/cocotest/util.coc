@@ -273,7 +273,7 @@ def one_to_five(l):
 
 # Unicode Functions:
 square_u = (x) → x ↑ 2
-neg_u = (⁻)
+def neg_u(x) = ⁻x
 neg_square_u = (x) → x ↦ square_u ↦ neg_u
 
 # In-Place Functions:
