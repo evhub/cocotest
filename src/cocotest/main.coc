@@ -22,6 +22,9 @@ def main_test():
     assert "\n " == """
  """
     assert "\\" "\"" == "\\\""
+    assert """
+
+""" == "\n\n"
     assert {"a":5}["a"] == 5
     assert set((1, 2, 3)) == {1, 2, 3}
     olist = [0,1,2]
@@ -274,6 +277,33 @@ def main_test():
     x ..= (+)$(1)
     x <|= 4
     assert x == 25
+    i = int()
+    try:
+        i.x = 12
+    except AttributeError as err:
+        assert err
+    else:
+        assert False
+    b = bytes()
+    try:
+        b.x = 12
+    except AttributeError as err:
+        assert err
+    else:
+        assert False
+    v = vector(1, 2)
+    try:
+        v.x = 3
+    except AttributeError as err:
+        assert err
+    else:
+        assert False
+    try:
+        v.new_attr = True
+    except AttributeError as err:
+        assert err
+    else:
+        assert False
 
 def main(doc):
     """Executes Tests."""
