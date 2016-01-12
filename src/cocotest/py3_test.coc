@@ -1,3 +1,5 @@
+import sys
+
 def py3_test():
     """Performs Python-3-specific tests."""
     def p1(x: int) -> int:
