@@ -41,9 +41,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py2_test.coc force_build/cocotest --strict --package --force --target 2
         - python -tt force_build/runner.py
@@ -95,9 +95,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py2_test.coc force_build/cocotest --strict --package --force --target 2
         - python -tt force_build/runner.py
@@ -149,9 +149,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py2_test.coc force_build/cocotest --strict --package --force --target 2
         - python -tt force_build/runner.py
@@ -203,9 +203,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py3_test.coc force_build/cocotest --strict --package --force --target 3
         - python -tt force_build/runner.py
@@ -258,9 +258,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py3_test.coc force_build/cocotest --strict --package --force --target 3
         - coconut src_target/cocotest/py33_test.coc force_build/cocotest --strict --package --force --target 3
@@ -316,9 +316,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py3_test.coc force_build/cocotest --strict --package --force --target 3
         - coconut src_target/cocotest/py33_test.coc force_build/cocotest --strict --package --force --target 3
@@ -374,9 +374,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py3_test.coc force_build/cocotest --strict --package --force --target 3
         - coconut src_target/cocotest/py33_test.coc force_build/cocotest --strict --package --force --target 3
@@ -431,9 +431,9 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cd run_build
+        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp src/runner.coc run_build; pushd run_build
         - coconut --run runner.coc --nowrite --strict
-        - cd ..
+        - popd
         - coconut src force_build --strict --force
         - coconut src_target/cocotest/py3_test.coc force_build/cocotest --strict --package --force --target 3
         - python -tt force_build/runner.py
