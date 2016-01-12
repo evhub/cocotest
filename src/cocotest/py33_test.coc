@@ -1,0 +1,6 @@
+def py33_test():
+    """Performs Python-3.3-specific tests."""
+    def chain2(a, b):
+        yield from a
+        yield from b
+    assert chain2((|1, 2|), (|3, 4|)) |> list == [1, 2, 3, 4]
