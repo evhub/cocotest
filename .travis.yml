@@ -16,7 +16,7 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - rm src/cocotest/py33_test.coc
         - rm src/cocotest/py3_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py2_test.coc
 
       script:
@@ -41,7 +41,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -69,7 +72,7 @@ matrix:
         - pip install ipython
         - rm src/cocotest/py33_test.coc
         - rm src/cocotest/py3_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py2_test.coc
 
       script:
@@ -95,7 +98,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -123,7 +129,7 @@ matrix:
         - pip install ipython
         - rm src/cocotest/py33_test.coc
         - rm src/cocotest/py3_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py2_test.coc
 
       script:
@@ -149,7 +155,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -176,7 +185,7 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - rm src/cocotest/py33_test.coc
         - rm src/cocotest/py2_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py3_test.coc
 
       script:
@@ -201,7 +210,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -228,7 +240,7 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - pip install ipython
         - rm src/cocotest/py2_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py3_test.coc
         - rm src/cocotest/py33_test.coc
 
@@ -257,7 +269,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -287,7 +302,7 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - pip install ipython
         - rm src/cocotest/py2_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py3_test.coc
         - rm src/cocotest/py33_test.coc
 
@@ -316,7 +331,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -346,7 +364,7 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - pip install ipython
         - rm src/cocotest/py2_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py3_test.coc
         - rm src/cocotest/py33_test.coc
 
@@ -375,7 +393,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
@@ -405,7 +426,7 @@ matrix:
         - git clone https://github.com/evhub/prisoner.git
         - rm src/cocotest/py33_test.coc
         - rm src/cocotest/py2_test.coc
-        - cp -r src src_target
+        - cp -r src/* src_target
         - rm src/cocotest/py3_test.coc
 
       script:
@@ -430,7 +451,10 @@ matrix:
         - coconut src/cocotest/main.coc folder_build/cocotest --strict --package
         - coconut src/cocotest/util.coc folder_build/cocotest --strict --package
         - python -tt folder_build/runner.py
-        - mkdir -p run_build/cocotest; cp -r folder_build run_build; cp folder_build/cocotest run_build/cocotest; cp src/runner.coc run_build; pushd run_build
+        - mkdir -p run_build/cocotest
+        - cp -r folder_build/* run_build
+        - cp src/runner.coc run_build
+        - pushd run_build
         - coconut --run runner.coc --nowrite --strict
         - popd
         - coconut src force_build --strict --force
