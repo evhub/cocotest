@@ -28,6 +28,7 @@ clean = (s) -> s.strip()
 add2 = (x) -> (y) -> x + y
 def swap2(f) = (x, y) -> f(y, x)
 swap2_ = (f) -> (x, y) -> f(y, x)
+same(iter1, iter2) = map((==), iter1, iter2)
 
 # Partial Applications:
 sum_ = reduce$((+))
