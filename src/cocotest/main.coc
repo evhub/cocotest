@@ -45,7 +45,8 @@ def main_test():
     assert 5 |> swap2((-))$(2) |> (*)$(2) == 6 == 5 |> swap2_((-))$(2) |> (*)$(2)
     assert all(same((1, 2, 3), [1, 2, 3]))
     assert 1 `range` 5 |> prod == 24
-    assert 2 `plus1` == 3
+    assert 2 `plus1` == 3 == plus1(2)
+    assert plus1(plus1(5)) == 7
     assert `sqrt` 16 == 4 == `sqrt_` 16
     assert `square` 3 == 9
     assert 3 `plus1sq` == 16 == 3 `plus1sq_`
