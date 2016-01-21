@@ -137,6 +137,10 @@ data preop(x, y):
     def add(self):
         return self.x + self.y
 data vector(x, y):
+    def __new__(cls, x, y=None):
+        match vector(x, y) in x:
+            pass
+        return datamaker(cls)(x, y)
     def __abs__(self):
         return (self.x**2 + self.y**2)**.5
     def transform(self, other):
