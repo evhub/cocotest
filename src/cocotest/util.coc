@@ -66,7 +66,7 @@ def qsort3(l):
         # Since only iter is ever called on l, and next on tail, l only has to be an iterator
         head = next(tail)
         return (qsort3((x for x in tail if x <= head))
-                :: iter((head,)) # The pivot is an iter
+                :: (head,) # The pivot is a tuple
                 :: qsort3((x for x in tail if x > head))
                 )
     except StopIteration:
@@ -85,7 +85,7 @@ def qsort5(l):
     try:
         match (head,) :: tail in l:
             return (qsort3((x for x in tail if x <= head))
-                :: iter((head,)) # The pivot is an iter
+                :: (head,) # The pivot is a tuple
                 :: qsort3((x for x in tail if x > head))
                 )
     except StopIteration:
