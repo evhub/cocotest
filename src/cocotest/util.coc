@@ -40,7 +40,7 @@ def qsort1(l):
     if len(l) == 0:
         return []
     else:
-        split = l.pop(0)
+        split = l.pop()
         smalls = []
         larges = []
         for x in l:
@@ -51,7 +51,7 @@ def qsort1(l):
         return qsort1(smalls) + [split] + qsort1(larges)
 def qsort2(l):
     """Functional Quick Sort."""
-    if len(l) == 0:
+    if not l:
         return []
     else:
         head, tail = l[0], l[1:] # Python Pattern-Matching
@@ -76,20 +76,19 @@ def qsort4(l):
     match [] in l:
         return l
     match [head] + tail in l:
-        return (qsort2([x for x in tail if x <= head])
+        return (qsort4([x for x in tail if x <= head])
                 + [head] # The pivot is a list
-                + qsort2([x for x in tail if x > head])
+                + qsort4([x for x in tail if x > head])
                 )
 def qsort5(l):
     """Iterator Match Quick Sort."""
-    try:
-        match (head,) :: tail in l:
-            tail, tail_ = tee(tail)
-            return (qsort3((x for x in tail if x <= head))
-                :: (head,) # The pivot is a tuple
-                :: qsort3((x for x in tail_ if x > head))
-                )
-    except StopIteration:
+    match (head,) :: tail in l:
+        tail, tail_ = tee(tail)
+        return (qsort5((x for x in tail if x <= head))
+            :: (head,) # The pivot is a tuple
+            :: qsort5((x for x in tail_ if x > head))
+            )
+    else:
         return iter(())
 
 # Infinite Iterators:
