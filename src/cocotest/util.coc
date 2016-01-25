@@ -62,12 +62,12 @@ def qsort2(l):
 def qsort3(l):
     """Iterator Quick Sort."""
     try:
-        tail = iter(l)
+        tail, tail_ = l |> iter |> tee
         # Since only iter is ever called on l, and next on tail, l only has to be an iterator
         head = next(tail)
         return (qsort3((x for x in tail if x <= head))
                 :: (head,) # The pivot is a tuple
-                :: qsort3((x for x in tail if x > head))
+                :: qsort3((x for x in tail_ if x > head))
                 )
     except StopIteration:
         return iter(())
@@ -84,9 +84,10 @@ def qsort5(l):
     """Iterator Match Quick Sort."""
     try:
         match (head,) :: tail in l:
+            tail, tail_ = tee(tail)
             return (qsort3((x for x in tail if x <= head))
                 :: (head,) # The pivot is a tuple
-                :: qsort3((x for x in tail if x > head))
+                :: qsort3((x for x in tail_ if x > head))
                 )
     except StopIteration:
         return iter(())
