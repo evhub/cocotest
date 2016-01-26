@@ -40,6 +40,7 @@ def qsort1(l):
     if len(l) == 0:
         return []
     else:
+        l = list(l)
         split = l.pop()
         smalls = []
         larges = []
