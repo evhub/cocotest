@@ -307,12 +307,12 @@ def main_test():
         assert err
     else:
         assert False
-    import queue, builtins, email.mime.base
-    assert queue.Queue
+    import queue as q, builtins, email.mime.base
+    assert q.Queue
     assert builtins.len([1, 1]) == 2
     assert email.mime.base
-    from email.mime import base
-    assert base
+    from email.mime import base as mimebase
+    assert mimebase
 
 def main(doc):
     """Executes Tests."""
