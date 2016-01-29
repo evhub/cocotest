@@ -307,6 +307,10 @@ def main_test():
         assert err
     else:
         assert False
+    import builtins
+    assert builtins.len([1, 2]) == 2
+    import email.mime.base
+    assert email.mime.base
 
 def main(doc):
     """Executes Tests."""
