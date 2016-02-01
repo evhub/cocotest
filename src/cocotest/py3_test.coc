@@ -24,6 +24,3 @@ def py3_test():
     assert isinstance(A(), A)
     assert isinstance("", A)
     assert isinstance(5, A)
-    if sys.version_info >= (3,3):
-        from .py33_test import py33_test
-        py33_test()

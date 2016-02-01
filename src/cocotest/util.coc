@@ -29,6 +29,9 @@ add2 = (x) -> (y) -> x + y
 def swap2(f) = (x, y) -> f(y, x)
 swap2_ = (f) -> (x, y) -> f(y, x)
 def same(iter1, iter2) = map((==), iter1, iter2)
+def chain2(a, b):
+    yield from a
+    yield from b
 
 # Partial Applications:
 sum_ = reduce$((+))
