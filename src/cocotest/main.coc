@@ -314,6 +314,13 @@ def main_test():
     assert email.mime.base
     from email.mime import base as mimebase
     assert mimebase
+    from_err = TypeError()
+    try:
+        raise ValueError() from from_err
+    except ValueError as err:
+        assert err.__cause__ is from_err
+    else:
+        assert False
 
 def main(doc):
     """Executes Tests."""
