@@ -322,6 +322,8 @@ def main_test():
         assert err.__cause__ is from_err
     else:
         assert False
+    data doc: "doc"
+    assert doc.__doc__ == "doc"
 
 def main(doc):
     """Executes Tests."""
