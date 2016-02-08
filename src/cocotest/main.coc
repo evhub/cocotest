@@ -336,4 +336,5 @@ def main(doc):
     else:
         from .py3_test import py3_test
         py3_test()
+    import tutorial
     print("<success>")
