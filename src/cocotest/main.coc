@@ -38,8 +38,8 @@ def main_test():
     assert 3 `mod` 6 == 3 == 3 `(%)` 6
     assert 5 `mod` 4 == 1 == 5 `(%)` 4
     assert 5 `mod` 2 `plus` 2 == 1 == 5 `(%)` 2 `(+)` 2
-    assert "11" `base` 2 == 3 == 2_11
-    assert 12_10A == 154 ==  "10A" `int` 12
+    assert "11" `base` 2 == 3
+    assert "10A" `int` 12 == 154
     assert ["1", "2"] `join_with` ", " == "1, 2"
     assert ["a","b","c"] `join_with` == "abc"
     assert {"a", 5} |> len == 2
@@ -325,6 +325,7 @@ def main_test():
         assert False
     data doc: "doc"
     assert doc.__doc__ == "doc"
+    assert 10000000.0 == 10_000_000.0
 
 def main(doc):
     """Executes Tests."""
