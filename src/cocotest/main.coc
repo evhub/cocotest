@@ -143,6 +143,8 @@ def main_test():
     assert iter1$[2:8] |> list == iter2$[2:8] |> list
     \data = 5
     assert \data == 5
+    \\data = 3
+    \\assert data == 5
     \\def backslash_test():
         return (x) -> x
     assert \(1) == 1 == backslash_test()(1)
