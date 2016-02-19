@@ -144,7 +144,7 @@ def main_test():
     \data = 5
     assert \data == 5
     \\data = 3
-    \\assert data == 5
+    \\assert data == 3
     \\def backslash_test():
         return (x) -> x
     assert \(1) == 1 == backslash_test()(1)
