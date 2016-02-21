@@ -356,14 +356,14 @@ data vector(pts):
     def angle(self, other is vector) = math.acos(self.unit() * other.unit())
 
 # Test cases:
-assert vector(3, 4) / 1 |> repr == "vector(pts=(3, 4))"
-assert vector(2, 4) / 2 |> repr == "vector(pts=(1, 2))"
-assert vector(0, 1).unit() |> repr == "vector(pts=(0, 1))"
-assert vector(5, 0).unit() |> repr == "vector(pts=(1, 0))"
-assert vector(2, 0).angle(vector(3, 0)) == 0
+assert vector(3, 4) / 1 |> repr == "vector(pts=(3.0, 4.0))"
+assert vector(2, 4) / 2 |> repr == "vector(pts=(1.0, 2.0))"
+assert vector(0, 1).unit() |> repr == "vector(pts=(0.0, 1.0))"
+assert vector(5, 0).unit() |> repr == "vector(pts=(1.0, 0.0))"
+assert vector(2, 0).angle(vector(3, 0)) == 0.0
 assert vector(1, 0).angle(vector(0, 2)) == math.pi/2
 try:
-    vector(1, 2).angle()
+    vector(1, 2).angle(5)
 except MatchError:
     assert True
 else:
