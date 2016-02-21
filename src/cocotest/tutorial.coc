@@ -307,3 +307,64 @@ assert linearized_plane()$[0] == (0, 0)
 assert linearized_plane()$[:3] |> list == [(0, 0), (0, 1), (1, 0)]
 assert vector_field()$[0] |> repr == "vector(pts=(0, 0))"
 assert vector_field()$[2:3] |> list |> repr == "[vector(pts=(1, 0))]"
+
+import math # necessary for math.acos in .angle
+
+data vector(pts):
+    """Immutable n-vector."""
+    def __new__(cls, *pts):
+        """Create a new vector from the given pts."""
+        if len(pts) == 1 and pts[0] `isinstance` vector:
+            return pts[0] # vector(v) where v is a vector should return v
+        else:
+            return pts |> tuple |> datamaker(cls) # accesses base constructor
+    def __abs__(self):
+        """Return the magnitude of the vector."""
+        return self.pts |> map$((x) -> x**2) |> sum |> ((s) -> s**0.5)
+    def __add__(self, other):
+        """Add two vectors together."""
+        vector(other_pts) = other
+        assert len(other_pts) == len(self.pts)
+        return map((+), self.pts, other_pts) |*> vector
+    def __sub__(self, other):
+        """Subtract one vector from another."""
+        vector(other_pts) = other
+        assert len(other_pts) == len(self.pts)
+        return map((-), self.pts, other_pts) |*> vector
+    def __neg__(self):
+        """Retrieve the negative of the vector."""
+        return self.pts |> map$((-)) |*> vector
+    def __eq__(self, other):
+        """Compare whether two vectors are equal."""
+        match vector(=self.pts) in other:
+            return True
+        else:
+            return False
+    def __mul__(self, other):
+        """Scalar multiplication and dot product."""
+        match vector(other_pts) in other:
+            assert len(other_pts) == len(self.pts)
+            return map((*), self.pts, other_pts) |> sum # dot product
+        else:
+            return self.pts |> map$((*)$(other)) |*> vector # scalar multiplication
+    def __rmul__(self, other):
+        """Necessary to make scalar multiplication commutative."""
+        return self * other
+    # New one-line functions necessary for finding the angle between vectors:
+    def __truediv__(self, other) = self.pts |> map$((x) -> x/other) |*> vector
+    def unit(self) = self / abs(self)
+    def angle(self, other is vector) = math.acos(self.unit() * other.unit())
+
+# Test cases:
+assert vector(3, 4) / 1 |> repr == "vector(pts=(3, 4))"
+assert vector(2, 4) / 2 |> repr == "vector(pts=(1, 2))"
+assert vector(0, 1).unit() |> repr == "vector(pts=(0, 1))"
+assert vector(5, 0).unit() |> repr == "vector(pts=(1, 0))"
+assert vector(2, 0).angle(vector(3, 0)) == 0
+assert vector(1, 0).angle(vector(0, 2)) == math.pi/2
+try:
+    vector(1, 2).angle()
+except MatchError:
+    assert True
+else:
+    assert False

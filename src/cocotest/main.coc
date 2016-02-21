@@ -326,7 +326,9 @@ def main_test():
     else:
         assert False
     data doc: "doc"
-    assert doc.__doc__ == "doc"
+    data doc_:
+        """doc"""
+    assert doc.__doc__ == "doc" == doc_.__doc__
     assert 10000000.0 == 10_000_000.0
     assert (||) |> tuple == ()
 
