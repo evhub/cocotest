@@ -331,8 +331,10 @@ def main_test():
     assert doc.__doc__ == "doc" == doc_.__doc__
     assert 10000000.0 == 10_000_000.0
     assert (||) |> tuple == ()
+    import collections
     import collections.abc
     assert isinstance([], collections.abc.Sequence)
+    assert collections.defaultdict(int)[5] == 0
 
 def main(doc):
     """Executes Tests."""
