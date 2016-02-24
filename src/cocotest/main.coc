@@ -344,6 +344,7 @@ def main_test():
     assert (|0,1,2,3|)$[-2:] |> tuple == (2,3)
     assert (|0,1,2,3|)$[:-2] |> tuple == (0,1)
     assert map((+), (|10, 20|), (|1, 2|))$[-1] == 22
+    assert map((x)->x+1, range(10**100))$[-1] == 10**100
 
 def main(doc):
     """Executes Tests."""
