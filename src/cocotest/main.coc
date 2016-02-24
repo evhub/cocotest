@@ -344,11 +344,11 @@ def main_test():
     assert (|0,1,2,3|)$[-2:] |> tuple == (2,3)
     assert (|0,1,2,3|)$[:-2] |> tuple == (0,1)
     assert map((+), (|10, 20|), (|1, 2|))$[-1] == 22
-    assert map((x)->x+1, range(10**100))$[-1] == 10**100 == count()$[10**100]
+    assert map((x)->x+1, range(10**18))$[-1] == 10**18 == count()$[10**18]
     assert count()$[10:15] |> tuple == (10,11,12,13,14)
     assert zip((1,2), (3,4)) |> tuple == ((1,3),(2,4)) == zip((1,2), (3,4))$[:] |> tuple
     assert zip((|10, 20|), (|1, 2|))$[-1] |> tuple == (20,2)
-    assert zip(count(), count())$[10**100] |> tuple == (10**100,10**100)
+    assert zip(count(), count())$[10**18] |> tuple == (10**18,10**18)
     assert count(1.5, 0.5)$[0] == 1.5 == (1.5,2,2.5,3)$[0]
     assert count(1.5, 0.5)$[1:3] |> tuple == (2,2.5) == (1.5,2,2.5,3)$[1:3] |> tuple
 
