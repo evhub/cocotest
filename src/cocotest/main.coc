@@ -338,12 +338,12 @@ def main_test():
     assert len(range(10)) == 10
     assert range(4) |> reversed |> tuple == (3,2,1,0)
     assert range(5)[1:] |> tuple == (1,2,3,4) == range(5)$[1:] |> tuple
-    assert range(10)[-3:-1] |> tuple == (7,8) == range(10)$[-3:-1]
+    assert range(10)[-3:-1] |> tuple == (7,8) == range(10)$[-3:-1] |> tuple
     assert map(abs, (1,-2,-5,2))$[:] |> tuple == (1,2,5,2)
     assert (|1,2|)$[-1] == 2
     assert (|0,1,2,3|)$[-2:] |> tuple == (2,3)
     assert (|0,1,2,3|)$[:-2] |> tuple == (0,1)
-    assert map((+), (|10, 20|), (|1, 2|))$[-1] == 22
+    assert map((+), (|10, 20|), (|1, 2|))$[-1] |> tuple == 22
 
 def main(doc):
     """Executes Tests."""
