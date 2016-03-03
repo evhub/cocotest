@@ -442,3 +442,13 @@ def grid_map(func, gridsample):
 def grid_trim(gridsample, xmax, ymax):
     """Convert a grid to a list of lists up to xmax and ymax."""
     return gridsample$[:xmax] |> map$((l) -> l$[:ymax] |> list) |> list
+
+# Physics functions:
+
+def SHOPeriodTerminate(X, t, params):
+    if X[1] > 0:
+        return -1 # passed the turning point, so go back
+    epsilon = params['epsilon'] if 'epsilon' in params else 1e-8
+    if abs(X[1]) < epsilon and X[0] < 0:
+        return 1  # we're done
+    return 0     # keep going
