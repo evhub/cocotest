@@ -25,6 +25,7 @@ matrix:
         - echo "assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()" | coconut --strict --display
         - python -c "from coconut.convenience import parse; exec parse('assert \'__coconut__\' in \`globals\`; msg = \'<success>\'; pmsg = print\$(msg); pmsg()')"
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -85,6 +86,7 @@ matrix:
         - ipython --ext coconut -c "%coconut assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()"
         - coconut --jupyter
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -145,6 +147,7 @@ matrix:
         - ipython --ext coconut -c "%coconut assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()"
         - coconut --jupyter
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -202,6 +205,7 @@ matrix:
         - echo "assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()" | coconut --strict --display
         - python -c "from coconut.convenience import parse; exec(parse('assert \'__coconut__\' in \`globals\`; msg = \'<success>\'; pmsg = print\$(msg); pmsg()'))"
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -262,6 +266,7 @@ matrix:
         - ipython --ext coconut -c "%coconut assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()"
         - coconut --jupyter
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -322,6 +327,7 @@ matrix:
         - ipython --ext coconut -c "%coconut assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()"
         - coconut --jupyter
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -382,6 +388,7 @@ matrix:
         - ipython --ext coconut -c "%coconut assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()"
         - coconut --jupyter
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
@@ -439,6 +446,7 @@ matrix:
         - echo "assert '__coconut__' in \`globals\`; msg = '<success>'; pmsg = print\$(msg); pmsg()" | coconut --strict --display
         - python -c "from coconut.convenience import parse; exec(parse('assert \'__coconut__\' in \`globals\`; msg = \'<success>\'; pmsg = print\$(msg); pmsg()'))"
         - coconut prisoner --strict
+        - coconut pyston
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
         - coconut src/cocotest/main.coc file_build/cocotest --strict
