@@ -349,6 +349,8 @@ def main_test():
     assert iter((0,1,2,3,4))$[::2] |> tuple == (0,2,4)
     assert iter((0,1,2,3,4))$[::-1] |> tuple == (4,3,2,1,0)
     assert {x:x for x in range(5)} == {0:0, 1:1, 2:2, 3:3, 4:4}
+    match x = 12
+    assert x == 12
 
 def main(doc):
     """Executes Tests."""
