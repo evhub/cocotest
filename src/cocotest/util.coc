@@ -456,4 +456,4 @@ def SHOPeriodTerminate(X, t, params):
 # Lack of backslash-escaped name function:
 
 def match(data):
-    return \data
+    return data
