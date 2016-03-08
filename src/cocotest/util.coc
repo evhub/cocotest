@@ -278,12 +278,17 @@ def map_(func, args):
     match [x] + xs in args if args `isinstance` list:
         return [func(x)] + map_(func, xs)
 def duplicate_first1(value):
-    match l=([x] + xs) in value:
+    match [x] + xs as l in value:
         return [x] + l
     else:
         raise TypeError()
 def duplicate_first2(value):
-    match l=([x] :: xs) is list in value:
+    match [x] :: xs as l is list in value:
+        return [x] :: l
+    else:
+        raise TypeError()
+def duplicate_first3(value):
+    match [x] :: xs is list as l in value:
         return [x] :: l
     else:
         raise TypeError()

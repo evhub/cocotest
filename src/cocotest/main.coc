@@ -134,7 +134,8 @@ def main_test():
     assert map_((+)$(1), ()) == ()
     assert map_((+)$(1), [0,1,2,3]) == [1,2,3,4]
     assert map_((+)$(1), (0,1,2,3)) == (1,2,3,4)
-    assert duplicate_first1([1,2,3]) == [1,1,2,3] == duplicate_first2([1,2,3]) |> list
+    assert duplicate_first1([1,2,3]) == [1,1,2,3]
+    assert dupcliate_first2([1,2,3]) |> list == [1,1,2,3] == duplicate_first3([1,2,3]) |> list
     assert one_to_five([1,2,3,4,5]) == [2,3,4]
     assert not one_to_five([0,1,2,3,4,5])
     assert one_to_five([1,5]) == []
@@ -351,6 +352,9 @@ def main_test():
     assert {x:x for x in range(5)} == {0:0, 1:1, 2:2, 3:3, 4:4}
     match x = 12
     assert x == 12
+    get_int = () -> int
+    x is get_int() = 5
+    assert x == 5
 
 def main(doc):
     """Executes Tests."""
