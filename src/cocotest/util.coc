@@ -457,8 +457,3 @@ def SHOPeriodTerminate(X, t, params):
     if abs(X[1]) < epsilon and X[0] < 0:
         return 1  # we're done
     return 0     # keep going
-
-# Lack of backslash-escaped name function:
-
-def match(data):
-    return data
