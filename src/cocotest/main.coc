@@ -247,16 +247,15 @@ def main_test():
     assert (-)(1) == -1 == (-)$(1)(2)
     assert pt.__doc__
     out0 = grid() |> grid_trim$(xmax=5, ymax=5)
-    out0_ = grid() |> parallel_grid_trim$(xmax=5, ymax=5)
     assert out0 == [
      [pt(x=0, y=0), pt(x=0, y=1), pt(x=0, y=2), pt(x=0, y=3), pt(x=0, y=4)],
      [pt(x=1, y=0), pt(x=1, y=1), pt(x=1, y=2), pt(x=1, y=3), pt(x=1, y=4)],
      [pt(x=2, y=0), pt(x=2, y=1), pt(x=2, y=2), pt(x=2, y=3), pt(x=2, y=4)],
      [pt(x=3, y=0), pt(x=3, y=1), pt(x=3, y=2), pt(x=3, y=3), pt(x=3, y=4)],
      [pt(x=4, y=0), pt(x=4, y=1), pt(x=4, y=2), pt(x=4, y=3), pt(x=4, y=4)]
-    ] == out0_
+    ]
     out1 = grid() |> grid_map$(abs) |> grid_trim$(xmax=5, ymax=5)
-    out1_ = grid() |> parallel_grid_map$(abs) |> parallel_grid_trim$(xmax=5, ymax=5)
+    out1_ = grid() |> grid_trim$(xmax=5, ymax=5) |> parallel_grid_map$(abs) |> map$(list) |> list
     assert out1[0] == [0.0, 1.0, 2.0, 3.0, 4.0] == out1_[0]
     assert out1[1][0] == 1.0 == out1_[1][0]
     assert out1[2][0] == 2.0 == out1_[2][0]
@@ -359,6 +358,9 @@ def main_test():
     assert map((+), range(5), range(6)) |> len == 5 == zip(range(5), range(6)) |> len
     assert map((-), range(5))._func(3) == -3
     assert map((-), range(5))._iters[0] |> tuple == range(5) |> tuple == zip(range(5), range(6))._iters[0] |> tuple
+    assert repr(zip((0,1), (1,2))) == "zip((0, 1), (1, 2))"
+    assert repr(map((-), range(5))).startswith("map(")
+    assert repr(parallel_map((-), range(5))).startswith("parallel_map(")
 
 def main(doc):
     """Executes Tests."""

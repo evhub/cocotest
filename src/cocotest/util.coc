@@ -457,11 +457,6 @@ def grid_trim(gridsample, xmax, ymax):
     """Convert a grid to a list of lists up to xmax and ymax."""
     return gridsample$[:xmax] |> map$((l) -> l$[:ymax] |> list) |> list
 
-def _grid_cutter(ymax, l) = l$[:ymax] |> list
-def parallel_grid_trim(gridsample, xmax, ymax):
-    """Convert a grid to a list of lists up to xmax and ymax."""
-    return gridsample$[:xmax] |> parallel_map$(_grid_cutter$(ymax)) |> list
-
 # Physics function:
 
 def SHOPeriodTerminate(X, t, params):
