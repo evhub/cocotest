@@ -361,6 +361,8 @@ def main_test():
     assert repr(zip((0,1), (1,2))) == "zip((0, 1), (1, 2))"
     assert repr(map((-), range(5))).startswith("map(")
     assert repr(parallel_map((-), range(5))).startswith("parallel_map(")
+    assert parallel_map((-), range(5)) |> tuple == (0, -1, -2, -3, -4) == parallel_map(map$((-)), (range(5),))$[0] |> tuple
+    assert parallel_map(zip, (range(2),), (range(2),)) |> tuple == (((0,0), (1,1)),)
 
 def main(doc):
     """Executes Tests."""
