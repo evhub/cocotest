@@ -344,7 +344,7 @@ def main_test():
     assert count()$[10:15] |> tuple == (10,11,12,13,14) == count()[10:15] |> tuple
     assert zip((1,2), (3,4)) |> tuple == ((1,3),(2,4)) == zip((1,2), (3,4))$[:] |> tuple
     assert zip((|10, 20|), (|1, 2|))$[-1] |> tuple == (20,2) == zip((|10, 20|), (|1, 2|))[-1] |> tuple
-    assert zip(count(), count())$[10**9] |> tuple == (10**9,10**9) == zip(count(), count())[10**9]
+    assert zip(count(), count())$[10**9] |> tuple == (10**9, 10**9) == zip(count(), count())[10**9] |> tuple
     assert count(1.5, 0.5)$[0] == 1.5 == (1.5,2,2.5,3)$[0]
     assert count(1.5, 0.5)$[1:3] |> tuple == (2,2.5) == (1.5,2,2.5,3)$[1:3] |> tuple
     assert SHOPeriodTerminate([-1, 0], 0, {"epsilon": 1})
