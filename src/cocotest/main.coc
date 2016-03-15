@@ -337,12 +337,12 @@ def main_test():
     assert (|1,2|)$[-1] == 2
     assert (|0,1,2,3|)$[-2:] |> tuple == (2,3)
     assert (|0,1,2,3|)$[:-2] |> tuple == (0,1)
-    assert map((+), (|10, 20|), (|1, 2|))$[-1] == 22
+    assert map((+), (|10, 20|), (|1, 2|))$[-1] == 22 == map((+), (|10, 20|), (|1, 2|))[-1]
     assert map((x)->x+1, range(10**9))$[-1] == 10**9 == count()$[10**9]
-    assert count()$[10:15] |> tuple == (10,11,12,13,14)
+    assert count()$[10:15] |> tuple == (10,11,12,13,14) == count()[10:15] |> tuple
     assert zip((1,2), (3,4)) |> tuple == ((1,3),(2,4)) == zip((1,2), (3,4))$[:] |> tuple
-    assert zip((|10, 20|), (|1, 2|))$[-1] |> tuple == (20,2)
-    assert zip(count(), count())$[10**9] |> tuple == (10**9,10**9)
+    assert zip((|10, 20|), (|1, 2|))$[-1] |> tuple == (20,2) == zip((|10, 20|), (|1, 2|))[-1] |> tuple
+    assert zip(count(), count())$[10**9] |> tuple == (10**9,10**9) == zip(count(), count())[10**9]
     assert count(1.5, 0.5)$[0] == 1.5 == (1.5,2,2.5,3)$[0]
     assert count(1.5, 0.5)$[1:3] |> tuple == (2,2.5) == (1.5,2,2.5,3)$[1:3] |> tuple
     assert SHOPeriodTerminate([-1, 0], 0, {"epsilon": 1})
@@ -354,6 +354,9 @@ def main_test():
     get_int = () -> int
     x is get_int() = 5
     assert x == 5
+    assert map((+), range(5), range(6)) |> len == 5 == zip(range(5), range(6)) |> len
+    assert map((-), range(5))._func(3) == -3
+    assert map((-), range(5))._iters[0] |> tuple == range(5) |> tuple == zip(range(5), range(6))._iters[0] |> tuple
 
 def main(doc):
     """Executes Tests."""
