@@ -14,6 +14,7 @@ matrix:
         - pip install coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - pip install futures
         - rm src/cocotest/py3_test.coc
         - mkdir src_target
         - cp -r src/* src_target
@@ -74,6 +75,7 @@ matrix:
         - pip install coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - pip install futures
         - pip install jupyter
         - rm src/cocotest/py3_test.coc
         - mkdir src_target
@@ -137,6 +139,7 @@ matrix:
         - pip install coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - pip install futures
         - pip install jupyter
         - rm src/cocotest/py3_test.coc
         - mkdir src_target
