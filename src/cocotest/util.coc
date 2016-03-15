@@ -431,6 +431,11 @@ data pt(x, y):
     """Cartesian point in the x-y plane. Immutable."""
     def __abs__(self):
         return (self.x**2 + self.y**2)**0.5
+    def __eq__(self, other):
+        match pt(=self.x, =self.y) in other:
+            return True
+        else:
+            return False
 
 def vertical_line(x=0, y=0):
     """Infinite iterator of pt representing a vertical line."""
