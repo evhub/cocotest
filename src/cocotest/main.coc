@@ -362,7 +362,7 @@ def main_test():
     assert repr(map((-), range(5))).startswith("map(")
     assert repr(parallel_map((*)$(-1), range(5))).startswith("parallel_map(")
     assert parallel_map((*)$(-1), range(5)) |> tuple == (0, -1, -2, -3, -4) == parallel_map(map$((*)$(-1)), (range(5),))$[0] |> tuple
-    assert parallel_map(zip, (range(2),), (range(2),)) |> tuple == (((0,0), (1,1)),)
+    assert parallel_map(zip, (range(2),), (range(2),)) |> map$(tuple) |> tuple == (((0,0), (1,1)),)
 
 def main(doc):
     """Executes Tests."""
