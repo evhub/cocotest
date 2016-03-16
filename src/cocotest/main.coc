@@ -357,7 +357,7 @@ def main_test():
     x is get_int() = 5
     assert x == 5
     class a(get_int()): pass
-    assert isinstance(a, int)
+    assert isinstance(a(), int)
     assert map((+), range(5), range(6)) |> len == 5 == zip(range(5), range(6)) |> len
     assert map((-), range(5))._func(3) == -3
     assert map((-), range(5))._iters[0] |> tuple == range(5) |> tuple == zip(range(5), range(6))._iters[0] |> tuple
