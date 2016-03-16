@@ -13,10 +13,13 @@ base = int
 def (a) `join_with` (b="") = b.join(a)
 
 # Basic Functions:
-prod = reduce$((*))
+prod = reduce$(*)
 def zipwith(f, *args) = map((items) -> f(*items), zip(*args))
 zipsum = map$(sum)..zip
 plus1 = plus$(1)
+ident = (x) -> x
+@ ident .. ident
+def plus1_(x) = x + 1
 def sqrt(x) = x**0.5
 def sqrt_(x) = x**0.5
 square = (x) -> x**2
