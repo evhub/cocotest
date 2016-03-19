@@ -9,8 +9,10 @@ def rand_list(n):
 # Infix Functions:
 plus = (+)
 mod = (%)
+def a `mod_` b = a % b
 base = int
-def (a) `join_with` (b="") = b.join(a)
+def (a) `join_with` (b=""):
+    return b.join(a)
 
 # Basic Functions:
 prod = reduce$(*)
