@@ -151,7 +151,11 @@ def main_test():
     \\def backslash_test():
         return (x) -> x
     assert \(1) == 1 == backslash_test()(1)
-    assert \("hello") == "hello" == \('hello')
+    assert \(
+            "hello"
+        ) == "hello" == \(
+            'hello'
+        )
     \\def multiline_backslash_test(
                                    x,
                                    y):
