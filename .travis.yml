@@ -66,6 +66,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py2_test.coc autopep8_build/cocotest --strict --package --target 2 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py2_test.coc minify_build/cocotest --strict --package --target 2 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 2
         - python target_build/runner.py
 
@@ -130,6 +133,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py2_test.coc autopep8_build/cocotest --strict --package --target 2 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py2_test.coc minify_build/cocotest --strict --package --target 2 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 2
         - python target_build/runner.py
 
@@ -197,6 +203,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py2_test.coc autopep8_build/cocotest --strict --package --target 2 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py2_test.coc minify_build/cocotest --strict --package --target 2 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 2
         - python target_build/runner.py
 
@@ -257,6 +266,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -320,6 +332,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -383,6 +398,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -446,6 +464,9 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -506,5 +527,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3 --autopep8
         - python autopep8_build/runner.py
+        - coconut src minify_build --strict --minify
+        - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
+        - python minify_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
