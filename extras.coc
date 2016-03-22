@@ -1,0 +1,145 @@
+from coconut.convenience import CoconutException, cmd, version, setup, parse
+
+def main():
+    assert version() == version("num")
+    assert version("name")
+    assert version("spec")
+    assert version("-v")
+    try:
+        version("other")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    _exec = parse("abc", "exec")
+    assert _exec
+    assert _exec == parse("abc")
+    _single = parse("abc", "single")
+    assert _single
+    _file = parse("abc", "file")
+    assert _file
+    _module = parse("abc", "module")
+    assert _module
+    _block = parse("abc", "block")
+    assert _block
+    _eval = parse("abc", "eval")
+    assert _eval
+    _debug = parse("abc", "debug")
+    assert _debug
+    setup(None, False, False, True)
+    assert _single == parse("abc", "single")
+    assert _file == parse("abc", "file")
+    assert _module == parse("abc", "module")
+    assert _block == parse("abc", "block")
+    assert _eval == parse("abc", "eval")
+    assert _debug == parse("abc", "debug")
+    assert parse(" abc")
+    try:
+        parse(" abc", "file")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("'")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("(")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("\\(")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("if a:\n  b\n c")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    assert parse("def f(x):\n \t pass")
+    assert parse("lambda x: x")
+    assert parse("u''")
+    assert parse("\\data")
+    assert parse("__coconut__")
+    assert parse("def f(x):\\\n pass")
+    assert parse("abc ")
+    setup(None, True, False, True)
+    try:
+        parse("def f(x):\n \t pass")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("lambda x: x")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("u''")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("\\data")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("__coconut__")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("def f(x):\\\n pass")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        parse("abc ")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        cmd("-qv")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        cmd("-f")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        cmd("-pa .")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    try:
+        cmd("-n . .")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    cmd("-v")
+    print("<success>")
+
+if __name__ == "__main__":
+    main()
