@@ -122,26 +122,20 @@ def main():
         assert False
     setup()
     try:
-        cmd("-qv")
-    except CoconutException:
-        assert True
-    else:
-        assert False
-    try:
         cmd("-f")
-    except CoconutException:
+    except SystemExit:
         assert True
     else:
         assert False
     try:
         cmd("-pa .")
-    except CoconutException:
+    except SystemExit:
         assert True
     else:
         assert False
     try:
         cmd("-n . .")
-    except CoconutException:
+    except SystemExit:
         assert True
     else:
         assert False
