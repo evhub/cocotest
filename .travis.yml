@@ -71,6 +71,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py2_test.coc minify_build/cocotest --strict --package --target 2 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py2_test.coc linenumbers_build/cocotest --strict --package --target 2 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py2_test.coc lns_min_build/cocotest --strict --package --target 2 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 2
         - python target_build/runner.py
 
@@ -140,6 +146,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py2_test.coc minify_build/cocotest --strict --package --target 2 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py2_test.coc linenumbers_build/cocotest --strict --package --target 2 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py2_test.coc lns_min_build/cocotest --strict --package --target 2 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 2
         - python target_build/runner.py
 
@@ -212,6 +224,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py2_test.coc minify_build/cocotest --strict --package --target 2 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py2_test.coc linenumbers_build/cocotest --strict --package --target 2 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py2_test.coc lns_min_build/cocotest --strict --package --target 2 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 2
         - python target_build/runner.py
 
@@ -277,6 +295,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py3_test.coc linenumbers_build/cocotest --strict --package --target 3 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py3_test.coc lns_min_build/cocotest --strict --package --target 3 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -345,6 +369,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py3_test.coc linenumbers_build/cocotest --strict --package --target 3 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py3_test.coc lns_min_build/cocotest --strict --package --target 3 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -413,6 +443,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py3_test.coc linenumbers_build/cocotest --strict --package --target 3 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py3_test.coc lns_min_build/cocotest --strict --package --target 3 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -481,6 +517,12 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py3_test.coc linenumbers_build/cocotest --strict --package --target 3 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py3_test.coc lns_min_build/cocotest --strict --package --target 3 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
 
@@ -546,5 +588,11 @@ matrix:
         - coconut src minify_build --strict --minify
         - coconut src_target/cocotest/py3_test.coc minify_build/cocotest --strict --package --target 3 --minify
         - python minify_build/runner.py
+        - coconut src linenumbers_build --strict --linenumbers
+        - coconut src_target/cocotest/py3_test.coc linenumbers_build/cocotest --strict --package --target 3 --linenumbers
+        - python linenumbers_build/runner.py
+        - coconut src lns_min_build --strict --linenumbers --minify
+        - coconut src_target/cocotest/py3_test.coc lns_min_build/cocotest --strict --package --target 3 --linenumbers --minify
+        - python lns_min_build/runner.py
         - coconut src_target target_build --strict --display --target 3
         - python target_build/runner.py
