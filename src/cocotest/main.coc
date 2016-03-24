@@ -391,5 +391,8 @@ def main(doc):
     else:
         from .py3_test import py3_test
         py3_test()
+        if sys.version_info >= (3, 5):
+            from .py35_test import py35_test
+            py35_test()
     from . import tutorial
     print("<success>")
