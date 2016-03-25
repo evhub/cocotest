@@ -73,7 +73,6 @@ def main():
     assert parse("def f(x):\n \t pass")
     assert parse("lambda x: x")
     assert parse("u''")
-    assert parse("data")
     assert parse("__coconut__")
     assert parse("def f(x):\\\n pass")
     assert parse("abc ")
@@ -92,12 +91,6 @@ def main():
         assert False
     try:
         parse("u''")
-    except CoconutException:
-        assert True
-    else:
-        assert False
-    try:
-        parse("data")
     except CoconutException:
         assert True
     else:
