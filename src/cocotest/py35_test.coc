@@ -14,3 +14,9 @@ def py35_test():
     loop = asyncio.get_event_loop()
     loop.run_until_complete(async_map_test())
     loop.close()
+    try:
+        2 @ 3
+    except TypeError:
+        assert True
+    else:
+        assert False
