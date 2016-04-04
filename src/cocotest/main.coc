@@ -367,8 +367,8 @@ def main_test():
     assert map((-), range(5))._iters[0] |> tuple == range(5) |> tuple == zip(range(5), range(6))._iters[0] |> tuple
     assert repr(zip((0,1), (1,2))) == "zip((0, 1), (1, 2))"
     assert repr(map((-), range(5))).startswith("map(")
-    assert repr(parallel_map((*)$(-1), range(5))).startswith("parallel_map(")
-    assert parallel_map((*)$(-1), range(5)) |> tuple == (0, -1, -2, -3, -4) == parallel_map(map$((*)$(-1)), (range(5),))$[0] |> tuple
+    assert repr(parallel_map((-), range(5))).startswith("parallel_map(")
+    assert parallel_map((-), range(5)) |> tuple == (0, -1, -2, -3, -4) == parallel_map(map$((-)), (range(5),))$[0] |> tuple
     assert parallel_map(zip, (range(2),), (range(2),)) |> map$(tuple) |> tuple == (((0,0), (1,1)),)
     assert (range(0, 5), range(5, 10)) |*> map$(+) |> tuple == (5, 7, 9, 11, 13)
 
