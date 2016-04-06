@@ -11,7 +11,6 @@ def main_test():
 ) == """
 """
     assert \(_coconut)
-    assert __coconut_version__
     assert "_coconut" in globals()
     assert "_coconut" not in locals()
     x = 5
