@@ -78,7 +78,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py2_test.coc autopep8_build/cocotest --strict --package --target 2.6 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 2.6
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 2.6
         - python target_build/runner.py
 
     - python: "2.7"
@@ -154,7 +155,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py2_test.coc autopep8_build/cocotest --strict --package --target 2.7 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 2.7
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 2.7
         - python target_build/runner.py
 
     - python: "pypy"
@@ -233,7 +235,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py2_test.coc autopep8_build/cocotest --strict --package --target 2.7 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 2.7
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 2.7
         - python target_build/runner.py
 
     - python: "3.2"
@@ -305,7 +308,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3.2 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 3.2
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 3.2
         - python target_build/runner.py
 
     - python: "3.3"
@@ -380,7 +384,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3.3 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 3.3
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 3.3
         - python target_build/runner.py
 
     - python: "3.4"
@@ -455,7 +460,8 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3.4 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 3.4
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 3.4
         - python target_build/runner.py
 
     - python: "3.5"
@@ -538,7 +544,8 @@ matrix:
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3.5 --autopep8
         - coconut src_target/cocotest/py35_test.coc autopep8_build/cocotest --strict --package --target 3.5 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 3.5
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 3.5
         - python target_build/runner.py
 
     - python: "pypy3"
@@ -610,5 +617,6 @@ matrix:
         - coconut src autopep8_build --strict --autopep8
         - coconut src_target/cocotest/py3_test.coc autopep8_build/cocotest --strict --package --target 3.2 --autopep8
         - python autopep8_build/runner.py
-        - coconut src_target target_build --strict --display --target 3.2
+        - coconut src_target sys_build --strict --target sys
+        - python sys_build/runner.pycoconut src_target target_build --strict --display --target 3.2
         - python target_build/runner.py
