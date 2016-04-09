@@ -2,6 +2,7 @@ from coconut.convenience import CoconutException, cmd, version, setup, parse
 from coconut.__coconut__ import consume as coc_consume
 
 def main():
+    assert consume(range(10), keep_last=1)[0] == 9 == coc_consume(range(10), keep_last=1)[0]
     assert version() == version("num")
     assert version("name")
     assert version("spec")
@@ -134,7 +135,14 @@ def main():
     else:
         assert False
     cmd("-v")
-    assert consume(range(10), keep_last=1)[0] == 9 == coc_consume(range(10), keep_last=1)[0]
+    try:
+        parse("f''")
+    except CoconutException:
+        assert True
+    else:
+        assert False
+    setup(target="3.6")
+    assert parse("f''")
     print("<success>")
 
 if __name__ == "__main__":
