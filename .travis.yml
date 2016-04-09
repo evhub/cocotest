@@ -29,7 +29,7 @@ matrix:
         - python -c "from coconut.convenience import parse; exec(parse('assert \'_coconut\' in \`globals\`; msg = \'<success>\'; pmsg = print\$(msg); pmsg()'))"
         - coconut pyston --recursionlimit 1100
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -107,7 +107,7 @@ matrix:
         - coconut --jupyter
         - coconut pyston --recursionlimit 1100
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -188,7 +188,7 @@ matrix:
         - python runner.py
         - popd
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -262,7 +262,7 @@ matrix:
         - python -c "from coconut.convenience import parse; exec(parse('assert \'_coconut\' in \`globals\`; msg = \'<success>\'; pmsg = print\$(msg); pmsg()'))"
         - coconut pyston --recursionlimit 1100
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -339,7 +339,7 @@ matrix:
         - coconut --jupyter
         - coconut pyston --recursionlimit 1100
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -416,7 +416,7 @@ matrix:
         - coconut --jupyter
         - coconut pyston --recursionlimit 1100
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -493,7 +493,7 @@ matrix:
         - coconut --jupyter
         - coconut pyston --recursionlimit 1100
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
@@ -575,7 +575,7 @@ matrix:
         - python -c "from coconut.convenience import parse; exec(parse('assert \'_coconut\' in \`globals\`; msg = \'<success>\'; pmsg = print\$(msg); pmsg()'))"
         - coconut pyston
         - coconut prisoner --strict
-        - coconut extras.coc --strict
+        - coconut extras.coc --run --strict
         - python extras.py
         - coconut src/runner.coc file_build --strict
         - coconut src/cocotest/__init__.coc file_build/cocotest --strict
