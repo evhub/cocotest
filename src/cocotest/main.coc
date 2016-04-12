@@ -333,6 +333,7 @@ def main_test():
     import collections
     import collections.abc
     assert isinstance([], collections.abc.Sequence)
+    assert isinstance(range(1), collections.abc.Sequence)
     assert collections.defaultdict(int)[5] == 0
     assert len(range(10)) == 10
     assert range(4) |> reversed |> tuple == (3,2,1,0)
