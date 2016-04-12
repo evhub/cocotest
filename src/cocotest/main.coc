@@ -371,6 +371,12 @@ def main_test():
     assert parallel_map(zip, (range(2),), (range(2),)) |> map$(tuple) |> tuple == (((0,0), (1,1)),)
     assert (range(0, 5), range(5, 10)) |*> map$(+) |> tuple == (5, 7, 9, 11, 13)
     assert parallel_map((*)$(2)..(+)$(1), range(5)) |> tuple == (2, 4, 6, 8, 10)
+    assert 0 in range(1)
+    assert range(1).count(0) == 1
+    assert 2 in range(5)
+    assert range(5).count(2) == 1
+    assert 10 not in range(3)
+    assert range(3).count(10) == 0
 
 def main(doc):
     """Executes Tests."""
