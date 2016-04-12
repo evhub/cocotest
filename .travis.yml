@@ -11,9 +11,11 @@ matrix:
     - python: "2.6"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - pip install futures
         - rm src/cocotest/py35_test.coc
         - rm src/cocotest/py3_test.coc
@@ -86,9 +88,11 @@ matrix:
     - python: "2.7"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - pip install futures
         - pip install jupyter
         - rm src/cocotest/py35_test.coc
@@ -164,9 +168,11 @@ matrix:
     - python: "pypy"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - pip install futures
         - pip install jupyter
         - rm src/cocotest/py35_test.coc
@@ -245,9 +251,11 @@ matrix:
     - python: "3.2"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coc
         - rm src/cocotest/py2_test.coc
         - mkdir src_target
@@ -319,9 +327,11 @@ matrix:
     - python: "3.3"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - pip install jupyter
         - rm src/cocotest/py35_test.coc
         - rm src/cocotest/py2_test.coc
@@ -396,9 +406,11 @@ matrix:
     - python: "3.4"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - pip install jupyter
         - rm src/cocotest/py35_test.coc
         - rm src/cocotest/py2_test.coc
@@ -473,9 +485,11 @@ matrix:
     - python: "3.5"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - pip install jupyter
         - rm src/cocotest/py2_test.coc
         - mkdir src_target
@@ -558,9 +572,11 @@ matrix:
     - python: "pypy3"
 
       install:
-        - pip install coconut
+        - git clone -b develop https://github.com/evhub/coconut.git
+        - pip install ./coconut
         - pip install autopep8
         - git clone https://github.com/evhub/prisoner.git
+        - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coc
         - rm src/cocotest/py2_test.coc
         - mkdir src_target
