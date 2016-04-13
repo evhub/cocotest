@@ -6,6 +6,7 @@ def main():
     assert version() == version("num")
     assert version("name")
     assert version("spec")
+    assert version("tag")
     assert version("-v")
     try:
         version("other")
