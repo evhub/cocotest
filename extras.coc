@@ -2,7 +2,7 @@ from coconut.convenience import CoconutException, cmd, version, setup, parse
 from coconut.__coconut__ import consume as coc_consume
 
 import sys
-if sys.version_info >= (3, 2) or (sys.version_info < (3,) and sys.version_info >= (2, 7)):
+if sys.version_info >= (3, 3) or (sys.version_info < (3,) and sys.version_info >= (2, 7)):
     from coconut.icoconut import kernel
 else:
     kernel = None
