@@ -150,6 +150,21 @@ assert [0,1,2,3,4] |> quick_sort |> list == [0,1,2,3,4]
 assert [4,3,2,1,0] |> quick_sort |> list == [0,1,2,3,4]
 assert [3,0,4,2,1] |> quick_sort |> list == [0,1,2,3,4]
 
+def quick_sort([head] :: tail):
+    """Return a sorted iterator of l, using the quick sort algorithm, and without using any data until necessary."""
+    tail, tail_ = tee(tail)
+    yield from (quick_sort((x for x in tail if x <= head))
+        :: (head,)
+        :: quick_sort((x for x in tail_ if x > head))
+        )
+
+# Test cases:
+assert [] |> quick_sort |> list == []
+assert [3] |> quick_sort |> list == [3]
+assert [0,1,2,3,4] |> quick_sort |> list == [0,1,2,3,4]
+assert [4,3,2,1,0] |> quick_sort |> list == [0,1,2,3,4]
+assert [3,0,4,2,1] |> quick_sort |> list == [0,1,2,3,4]
+
 data vector2(x, y):
     """Immutable 2-vector."""
     def __abs__(self):
