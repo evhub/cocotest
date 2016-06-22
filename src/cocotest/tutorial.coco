@@ -134,8 +134,72 @@ else:
 assert 0 |> factorial == 1
 assert 3 |> factorial == 6
 
+def factorial(0):
+    return 1
+
+@addpattern(factorial)
+def factorial(n is int if n > 0):
+    """Compute n! where n is an integer >= 0."""
+    return range(1, n+1) |> reduce$((*))
+
+# Test cases:
+try:
+    -1 |> factorial
+except MatchError:
+    assert True
+else:
+    assert False
+try:
+    0.5 |> factorial
+except MatchError:
+    assert True
+else:
+    assert False
+assert 0 |> factorial == 1
+assert 3 |> factorial == 6
+
+def factorial(0) = 1
+
+@addpattern(factorial)
+def factorial(n is int if n > 0):
+    """Compute n! where n is an integer >= 0."""
+    return n * factorial(n - 1)
+
+# Test cases:
+try:
+    -1 |> factorial
+except MatchError:
+    assert True
+else:
+    assert False
+try:
+    0.5 |> factorial
+except MatchError:
+    assert True
+else:
+    assert False
+assert 0 |> factorial == 1
+assert 3 |> factorial == 6
+
+def quick_sort([]):
+    return []
+
+@addpattern(quick_sort)
+def quick_sort([head] + tail):
+    """Sort the input sequence using the quick sort algorithm."""
+    return (quick_sort([x for x in tail if x < head])
+        + [head]
+        + quick_sort([x for x in tail if x >= head]))
+
+# Test cases:
+assert [] |> quick_sort == []
+assert [3] |> quick_sort == [3]
+assert [0,1,2,3,4] |> quick_sort == [0,1,2,3,4]
+assert [4,3,2,1,0] |> quick_sort == [0,1,2,3,4]
+assert [3,0,4,2,1] |> quick_sort == [0,1,2,3,4]
+
 def quick_sort(l):
-    """Return a sorted iterator of l, using the quick sort algorithm, and without using any data until necessary."""
+    """Sort the input iterator, using the quick sort algorithm, and without using any data until necessary."""
     match [head] :: tail in l:
         tail, tail_ = tee(tail)
         yield from (quick_sort((x for x in tail if x <= head))
