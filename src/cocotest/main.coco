@@ -410,6 +410,10 @@ def main_test():
     assert count(1,3)[1] == 4
     assert len <| map((x) -> x, [1, 2]) == 2
     assert repr("hello") == "'hello'" == ascii("hello")
+    assert add_int_or_str_1(2) == 3 == coercive_add(2, "1")
+    assert add_int_or_str_1("2") == "21" == coercive_add("2", 1)
+    assert still_ident(3) == 3
+    assert not_ident(3) == "bar"
 
 def main(doc):
     """Executes Tests."""

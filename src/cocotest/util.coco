@@ -471,3 +471,19 @@ def SHOPeriodTerminate(X, t, params):
     if abs(X[1]) < epsilon and X[0] < 0:
         return 1  # we're done
     return 0     # keep going
+
+# Multiple dispatch:
+
+def add_int_or_str_1(x is int) = x + 1
+@addpattern(add_int_or_str_1)
+def add_int_or_str_1(x is str) = x + "1"
+
+def coercive_add(a is int, b) = a + int(b)
+@addpattern(coercive_add)
+def coercive_add(a is str, b) = a + str(b)
+
+@addpattern(ident)
+def still_ident(x) = "foo"
+
+@prepattern(ident)
+def not_ident(x) = "bar"
