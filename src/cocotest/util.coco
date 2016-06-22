@@ -487,3 +487,13 @@ def still_ident(x) = "foo"
 
 @prepattern(ident)
 def not_ident(x) = "bar"
+
+# Pattern-matching functions with guards
+
+def pattern_abs(x if x < 0) = -x
+@addpattern(pattern_abs)
+def pattern_abs(x) = x
+
+def `pattern_abs_` (x) if x < 0 = -x
+@addpattern(pattern_abs)
+def `pattern_abs` (x) = x
