@@ -495,5 +495,5 @@ def pattern_abs(x if x < 0) = -x
 def pattern_abs(x) = x
 
 def `pattern_abs_` (x) if x < 0 = -x
-@addpattern(pattern_abs)
-def `pattern_abs` (x) = x
+@addpattern(pattern_abs_)
+def `pattern_abs_` (x) = x
