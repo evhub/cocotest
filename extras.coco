@@ -169,11 +169,11 @@ def main():
         assert complete_result["cursor_end"] == 3
         assert not complete_result["metadata"]
         keyword_complete_result = k.do_complete("ma", 1)
-        assert complete_result["status"] == "ok"
-        assert set(complete_result["matches"]) == set(["map", "match"])
-        assert complete_result["cursor_start"] == 0
-        assert complete_result["cursor_end"] == 2
-        assert not complete_result["metadata"]
+        assert keyword_complete_result["status"] == "ok"
+        assert set(keyword_complete_result["matches"]) == set(["map", "match"])
+        assert keyword_complete_result["cursor_start"] == 0
+        assert keyword_complete_result["cursor_end"] == 2
+        assert not keyword_complete_result["metadata"]
     print("<success>")
 
 if __name__ == "__main__":
