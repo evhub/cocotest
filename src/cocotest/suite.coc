@@ -422,4 +422,4 @@ def main_test():
     assert range(1, 2).__copy__()$[0] == 1
     assert count(1).__copy__()$[0] == 1
     assert map((+), count(1), count(1)).__copy__()$[0] == 2
-    assert zip(count(1), count(1)).__copy__()$[0] == (1, 1)
+    assert zip(count(1), count(1)).__copy__()$[0] |> tuple == (1, 1)
