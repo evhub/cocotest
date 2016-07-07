@@ -419,3 +419,7 @@ def main_test():
     assert count(1,3) |> .index(1) == 0
     assert vector(1, 2) |> .__eq__(other=vector(1, 2))
     assert fib() |> takewhile$((i) -> i < 4000000 ) |> filter$((i) -> i % 2 == 0 ) |> sum == 4613732
+    assert range(1, 2).__copy__()$[0] == 1
+    assert count(1).__copy__()$[0] == 1
+    assert map((+), count(1), count(1)).__copy__()$[0] == 2
+    assert zip(count(1), count(1)).__copy__()$[0] == (1, 1)
