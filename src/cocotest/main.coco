@@ -218,6 +218,13 @@ def basic_test():
     assert tee(range(10)) |> map$((t) -> isinstance(t, range)) |> all
     assert (-> 5)() == 5
     assert (-> _[0])([1, 2, 3]) == 1
+    assert range(10) |> map$((x) -> y = x) |> list == [None]*10
+    assert range(5) |> map$((x) -> yield x) |> map$(list) |> list == [[0], [1], [2], [3], [4]]
+    def do_stuff(x) = True
+    assert ((x=4) -> do_stuff(x); x)() == 4
+    assert ((x=5) -> do_stuff(x);)() is True
+    ((x=6) -> do_stuff(x); assert x)()
+    assert ((x=7) -> do_stuff(x); assert x; yield x)() |> list == [7]
 
 def main(*args):
     """Asserts arguments and executes tests."""
