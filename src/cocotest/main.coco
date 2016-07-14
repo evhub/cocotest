@@ -221,11 +221,11 @@ def basic_test():
     assert range(10) |> map$((x) -> y = x) |> list == [None]*10
     assert range(5) |> map$((x) -> yield x) |> map$(list) |> list == [[0], [1], [2], [3], [4]]
     def do_stuff(x) = True
-    assert ((x=4) -> do_stuff(x); x)() == 4
-    assert ((x=5) -> do_stuff(x);)() is True
-    ((x=6) -> do_stuff(x); assert x)()
-    assert ((x=7) -> do_stuff(x); assert x; yield x)() |> list == [7]
-    assert (-> do_stuff(_); assert _; _)(8) == 8
+    assert (def (x=4) -> do_stuff(x); x)() == 4
+    assert (def (x=5) -> do_stuff(x);)() is True
+    (def (x=6) -> do_stuff(x); assert x)()
+    assert (def (x=7) -> do_stuff(x); assert x; yield x)() |> list == [7]
+    assert (def -> do_stuff(_); assert _; _)(8) == 8
     assert (def (x=9) -> x)() == 9
     assert (def (x=10) -> do_stuff(x); x)() == 10
     assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]
