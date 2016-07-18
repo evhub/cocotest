@@ -230,6 +230,7 @@ def basic_test():
     assert (def (x=9) -> x)() == 9
     assert (def (x=10) -> do_stuff(x); x)() == 10
     assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]
+    assert (def -> (def -> 11))()() == 11
 
 def main(*args):
     """Asserts arguments and executes tests."""
