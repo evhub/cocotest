@@ -216,6 +216,7 @@ def basic_test():
     assert zip(count(1), count(1)).__copy__()$[0] |> tuple == (1, 1)
     assert tee(count()) |> map$((t) -> isinstance(t, count)) |> all
     assert tee(range(10)) |> map$((t) -> isinstance(t, range)) |> all
+    assert tee([1, 2, 3]) |> map$((t) -> isinstance(t, list)) |> all
     assert (-> 5)() == 5
     assert (-> _[0])([1, 2, 3]) == 1
     assert range(10) |> map$(def (x) -> y = x) |> list == [None]*10
