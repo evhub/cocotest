@@ -229,8 +229,13 @@ def basic_test():
     assert (def -> do_stuff(_); assert _; _)(8) == 8
     assert (def (x=9) -> x)() == 9
     assert (def (x=10) -> do_stuff(x); x)() == 10
-    assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]
-    assert (def -> (def -> 11))()() == 11
+    assert (def -> def -> 11)()() == 11
+    exec("a = 1")
+    assert a == 1
+    test = {}
+    exec("a = 2", test)
+    assert test["a"] == 2
+    assert a == 1
 
 def main(*args):
     """Asserts arguments and executes tests."""
