@@ -28,5 +28,6 @@ def py3_test():
     assert isinstance(B(), B)
     assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]
     e = exec
-    e("a=1")
-    assert a == 1
+    test = {}
+    e("a=1", test)
+    assert test["a"] == 1
