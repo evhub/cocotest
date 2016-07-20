@@ -247,7 +247,7 @@ def main(*args):
     """Asserts arguments and executes tests."""
     assert all(args)
     basic_test()
-    if sys.version_info() >= (2, 7):
+    if sys.version_info >= (2, 7):
         non_py26_test()
     from .suite import main_test
     main_test()
