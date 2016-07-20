@@ -5,4 +5,3 @@ def py2_test():
     assert py2_range(5) == [0, 1, 2, 3, 4]
     assert not isinstance(long(1), py2_int)
     assert py2_str(3) == b"3" == unicode(b"3")
-    assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]

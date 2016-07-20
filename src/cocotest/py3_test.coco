@@ -26,7 +26,6 @@ def py3_test():
     assert py3_zip(range(3), range(3)) |> tuple == ((0, 0), (1, 1), (2, 2))
     class B(*()): pass
     assert isinstance(B(), B)
-    assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]
     e = exec
     e("a=1")
     assert a == 1

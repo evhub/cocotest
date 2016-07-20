@@ -221,6 +221,17 @@ def basic_test():
     assert (-> _[0])([1, 2, 3]) == 1
     assert range(10) |> map$(def (x) -> y = x) |> list == [None]*10
     assert range(5) |> map$(def (x) -> yield x) |> map$(list) |> list == [[0], [1], [2], [3], [4]]
+    exec("a = 1", globals(), locals())
+    assert a == 1
+    test = {}
+    exec("a = 2", test)
+    assert test["a"] == 2
+    assert a == 1
+    assert iter(range(10))$[-5:-8] |> list == [5, 6]
+    assert iter(range(10))$[-2:] |> list == [8, 9]
+
+def non_py26_test():
+    """Tests for any non-py26 version."""
     def do_stuff(x) = True
     assert (def (x=3) -> do_stuff(x))() is True
     assert (def (x=4) -> do_stuff(x); x)() == 4
@@ -231,19 +242,14 @@ def basic_test():
     assert (def (x=9) -> x)() == 9
     assert (def (x=10) -> do_stuff(x); x)() == 10
     assert (def -> def -> 11)()() == 11
-    exec("a = 1", globals(), locals())
-    assert a == 1
-    test = {}
-    exec("a = 2", test)
-    assert test["a"] == 2
-    assert a == 1
-    assert iter(range(10))$[-5:-8] |> list == [5, 6]
-    assert iter(range(10))$[-2:] |> list == [8, 9]
+    assert ((def -> x) for x in range(5)) |> map$(-> _()) |> list == [0, 1, 2, 3, 4]
 
 def main(*args):
     """Asserts arguments and executes tests."""
     assert all(args)
     basic_test()
+    if sys.version_info() >= (2, 7):
+        non_py26_test()
     from .suite import main_test
     main_test()
     if sys.version_info < (3,):
