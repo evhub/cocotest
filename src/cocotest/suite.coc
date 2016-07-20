@@ -217,5 +217,5 @@ def main_test():
     assert fib() |> takewhile$((i) -> i < 4000000 ) |> filter$((i) -> i % 2 == 0 ) |> sum == 4613732
     assert (def -> mod)()(5, 3) == 2
     test = {}
-    exec("b = 5 `mod` 3", globals(), test)
+    exec("b = mod(5, 3)", globals(), test)
     assert test["b"] == 2

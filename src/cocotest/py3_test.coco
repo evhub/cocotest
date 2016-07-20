@@ -27,5 +27,6 @@ def py3_test():
     class B(*()): pass
     assert isinstance(B(), B)
     e = exec
-    e("a=1")
-    assert a == 1
+    test = {}
+    e("a=1", test)
+    assert test["a"] == 1
