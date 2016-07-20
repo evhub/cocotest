@@ -221,14 +221,6 @@ def basic_test():
     assert (-> _[0])([1, 2, 3]) == 1
     assert range(10) |> map$(def (x) -> y = x) |> list == [None]*10
     assert range(5) |> map$(def (x) -> yield x) |> map$(list) |> list == [[0], [1], [2], [3], [4]]
-    exec("a = 1", globals(), locals())
-    assert a == 1
-    test = {}
-    exec("a = 2", test)
-    assert test["a"] == 2
-    assert a == 1
-    assert iter(range(10))$[-5:-8] |> list == [5, 6]
-    assert iter(range(10))$[-2:] |> list == [8, 9]
     test = {}
     exec("a = 1", test)
     assert test["a"] == 1
