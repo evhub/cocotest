@@ -1,5 +1,10 @@
 def non_py26_test():
     """Tests for any non-py26 version."""
+    test = {}
+    exec("a = 1", test)
+    assert test["a"] == 1
+    exec("a = 2", globals(), test)
+    assert test["a"] == 2
     assert range(10) |> map$(def (x) -> y = x) |> list == [None]*10
     assert range(5) |> map$(def (x) -> yield x) |> map$(list) |> list == [[0], [1], [2], [3], [4]]
     def do_stuff(x) = True
