@@ -121,6 +121,12 @@ def main():
         assert True
     else:
         assert False
+    try:
+        parse("abc", "file")
+    except CoconutException:
+        assert True
+    else:
+        assert False
     setup()
     try:
         cmd("-f")
