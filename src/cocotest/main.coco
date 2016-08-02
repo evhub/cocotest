@@ -221,6 +221,8 @@ def basic_test():
     assert (-> _[0])([1, 2, 3]) == 1
     assert iter(range(10))$[-5:-8] |> list == [5, 6]
     assert iter(range(10))$[-2:] |> list == [8, 9]
+    assert range(1, 5) |> .[1] == 2 == range(1, 5) |> .$[1]
+    assert range(10) |> .[:5] |> list == [0, 1, 2, 3, 4] == range(10) |> .$[:5] |> list
 
 def main(*args):
     """Asserts arguments and executes tests."""
