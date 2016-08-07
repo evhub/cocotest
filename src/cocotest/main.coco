@@ -241,6 +241,10 @@ def basic_test():
         herp = 10
         return (def -> herpaderp + herp)
     assert derp()() == 15
+    data abc(xyz)
+    assert abc(10).xyz == 10
+    class aclass
+    assert isinstance(aclass, object)
 
 def main(*args):
     """Asserts arguments and executes tests."""
