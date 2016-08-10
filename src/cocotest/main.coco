@@ -1,6 +1,6 @@
 import sys
 
-def basic_test():
+def main_test():
     """Basic no-dependency tests."""
     assert "\n" == (
 
@@ -250,12 +250,12 @@ def basic_test():
 def main(*args):
     """Asserts arguments and executes tests."""
     assert all(args)
-    basic_test()
+    main_test()
     if sys.version_info >= (2, 7):
         from .non_py26_test import non_py26_test
         non_py26_test()
-    from .suite import main_test
-    main_test()
+    from .suite import suite_test
+    suite_test()
     if sys.version_info < (3,):
         from .py2_test import py2_test
         py2_test()

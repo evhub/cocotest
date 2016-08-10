@@ -1,6 +1,6 @@
 from .util import *
 
-def main_test():
+def suite_test():
     """Executes the main test suite."""
     assert 1 `plus` 1 == 2 == 1 `(+)` 1
     assert "1" `plus` "1" == "11" == "1" `(+)` "1"
@@ -216,6 +216,3 @@ def main_test():
     assert vector(1, 2) |> .__eq__(other=vector(1, 2))
     assert fib() |> takewhile$((i) -> i < 4000000 ) |> filter$((i) -> i % 2 == 0 ) |> sum == 4613732
     assert (def -> mod)()(5, 3) == 2
-    test = {}
-    exec("b = mod(5, 3)", globals(), test)
-    assert test["b"] == 2
