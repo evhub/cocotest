@@ -502,3 +502,11 @@ def `pattern_abs_` (x) = x
 
 @recursive_iterator
 def fib() = (1, 2) :: map((+), fib(), fib()$[1:])
+
+
+# Sieve Example
+
+def sieve((||)) = []
+
+@prepattern(sieve)
+def sieve([head] :: tail) = [head] :: sieve(n for n in tail if n % head)
