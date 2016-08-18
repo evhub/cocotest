@@ -11,7 +11,6 @@ matrix:
     - python: "2.6"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -101,7 +100,6 @@ matrix:
     - python: "2.7"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -194,7 +192,6 @@ matrix:
     - python: "pypy"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -290,7 +287,6 @@ matrix:
     - python: "3.2"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -379,7 +375,6 @@ matrix:
     - python: "3.3"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -471,7 +466,6 @@ matrix:
     - python: "3.4"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -563,7 +557,6 @@ matrix:
     - python: "3.5"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
@@ -663,7 +656,6 @@ matrix:
     - python: "pypy3"
 
       install:
-        - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
