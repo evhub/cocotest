@@ -13,7 +13,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -102,7 +103,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -194,7 +196,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -289,7 +292,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -377,7 +381,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -468,7 +473,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -559,7 +565,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
@@ -658,7 +665,8 @@ matrix:
       install:
         - pip install --upgrade pip
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut[autopep8]
+        - pip install ./coconut
+        - pip install autopep8
         - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
