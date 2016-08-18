@@ -89,6 +89,10 @@ def main_test():
         glob_a, glob_b = x, x
     set_globs(2)
     assert glob_a == 2 == glob_b
+    def set_globs_again(x):
+        global (glob_a, glob_b) = (x, x)
+    set_globs_again(10)
+    assert glob_a == 10 == glob_b
     assert (-)(1) == -1 == (-)$(1)(2)
     assert 3 `(<=)` 3
     assert range(10) |> consume |> list == []

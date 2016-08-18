@@ -10,6 +10,10 @@ def py3_test():
         x = y
     set_x(3)
     assert x == 3
+    def set_x_again(y):
+        nonlocal x = y
+    set_x_again(10)
+    assert x == 10
     assert {x:x for x in range(5)} == {0:0, 1:1, 2:2, 3:3, 4:4}
     def head_tail(l):
         head, *tail = l
