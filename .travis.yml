@@ -14,7 +14,6 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - pip install futures
@@ -103,10 +102,10 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - pip install futures
+        - pip install pygments
         - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py3_test.coco
@@ -195,10 +194,10 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - pip install futures
+        - pip install pygments
         - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py3_test.coco
@@ -290,7 +289,6 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coco
@@ -378,9 +376,9 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
+        - pip install pygments
         - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py2_test.coco
@@ -469,9 +467,9 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
+        - pip install pygments
         - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py2_test.coco
@@ -560,9 +558,9 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
+        - pip install pygments
         - pip install jupyter
         - rm src/cocotest/py2_test.coco
         - mkdir src_target
@@ -659,7 +657,6 @@ matrix:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
         - pip install autopep8
-        - pip install pygments
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coco
