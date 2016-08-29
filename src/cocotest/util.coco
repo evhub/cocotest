@@ -510,8 +510,17 @@ def sieve((||)) = []
 @prepattern(sieve)
 def sieve([head] :: tail) = [head] :: sieve(n for n in tail if n % head)
 
-# Shorthand function definition
+# "Assignment function" definitions
 
 def double_plus_one(x) =
     x *= 2
     x + 1
+
+def assign_func_1(f, x, y) =
+    def inner_assign_func((a, b)) = f(a, b)
+    inner_assign_func((x, y))
+
+def assign_func_2(f, x, y) =
+    def inner_assign_func((a, b)) =
+        f(a, b)
+    inner_assign_func((x, y))

@@ -218,3 +218,5 @@ def suite_test():
     assert (def -> mod)()(5, 3) == 2
     assert sieve((2, 3, 4, 5)) |> list == [2, 3, 5]
     assert 11 == double_plus_one(5)
+    assert 15 == assign_func_1((*), 3, 5)
+    assert 15 == assign_func_2((*), 3, 5)
