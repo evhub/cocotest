@@ -524,3 +524,8 @@ def assign_func_2(f, x, y) =
     def inner_assign_func((a, b)) =
         f(a, b)
     inner_assign_func((x, y))
+
+# Composable Functions
+
+mul = (*)
+def minus(a, b) = b - a
