@@ -126,7 +126,7 @@ def map_iter(func, args):
         return (| func(x) |) :: map_iter(func, xs)
 
 # Recursive Functions:
-@recursive
+@tail_recursive
 def next_mul_of(n, x):
     if x % n == 0:
         return x
@@ -134,7 +134,7 @@ def next_mul_of(n, x):
         return next_mul_of(n, x+1)
 def maybe_recursive(cond):
     if cond:
-        return recursive
+        return tail_recursive
     else:
         return (func) -> func
 @maybe_recursive(True)
