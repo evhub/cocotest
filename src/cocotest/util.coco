@@ -138,9 +138,10 @@ def collatz(n):
         return collatz(n/2)
     else:
         return collatz(3*n+1)
-def recurse_n_times(n):
-    if n:
-        return recurse_n_times(n-1)
+def recurse_n_times(n) =
+    if not n:
+        return True
+    recurse_n_times(n-1)
 def is_even(n) =
     if not n:
         return True
