@@ -141,6 +141,14 @@ def collatz(n):
 def recurse_n_times(n):
     if n:
         return recurse_n_times(n-1)
+def is_even(n) =
+    if not n:
+        return True
+    is_odd(n-1)
+def is_odd(n) =
+    if not n:
+        return False
+    is_even(n-1)
 
 # Data Blocks:
 data preop(x, y):
