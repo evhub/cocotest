@@ -492,7 +492,7 @@ def `pattern_abs_` (x) = x
 def fib() = (1, 2) :: map((+), fib(), fib()$[1:])
 
 @recursive_iterator
-def repeat(it) = it :: repeat(it)
+def loop(it) = it :: loop(it)
 
 # Sieve Example
 
