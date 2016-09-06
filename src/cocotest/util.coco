@@ -126,11 +126,13 @@ def map_iter(func, args):
         return (| func(x) |) :: map_iter(func, xs)
 
 # Recursive Functions:
+
 def next_mul_of(n, x):
     if x % n == 0:
         return x
     else:
         return next_mul_of(n, x+1)
+
 def collatz(n):
     if n == 1:
         return True
@@ -138,10 +140,12 @@ def collatz(n):
         return collatz(n/2)
     else:
         return collatz(3*n+1)
+
 def recurse_n_times(n) =
     if not n:
         return True
     recurse_n_times(n-1)
+
 def is_even(n) =
     if not n:
         return True
@@ -150,6 +154,14 @@ def is_odd(n) =
     if not n:
         return False
     is_even(n-1)
+
+def is_even_(0) = True
+@addpattern(is_even_)
+def is_even_(n) = is_odd_(n-1)
+
+def is_odd_(0) = False
+@addpattern(is_odd_)
+def is_odd_(n) = is_even_(n-1)
 
 # Data Blocks:
 data preop(x, y):
