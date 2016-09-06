@@ -541,3 +541,14 @@ def assign_func_2(f, x, y) =
 
 mul = (*)
 def minus(a, b) = b - a
+
+# Exception Functions
+
+def raise_exc():
+    raise Exception()
+
+def does_raise_exc(func):
+    try:
+        return func()
+    except Exception():
+        return True
