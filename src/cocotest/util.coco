@@ -550,5 +550,5 @@ def raise_exc():
 def does_raise_exc(func):
     try:
         return func()
-    except Exception():
+    except Exception:
         return True
