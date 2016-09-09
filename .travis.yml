@@ -191,6 +191,7 @@ matrix:
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
+        - alias coconut='python -m coconut.main'
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - pip install futures
@@ -649,6 +650,7 @@ matrix:
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
         - pip install ./coconut
+        - alias coconut='python -m coconut.main'
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coco
