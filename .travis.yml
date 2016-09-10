@@ -12,10 +12,11 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
-        - pip install futures
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py3_test.coco
         - mkdir src_target
@@ -99,12 +100,12 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install -r requirements-jupyter.txt
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
-        - pip install futures
-        - pip install pygments
-        - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py3_test.coco
         - mkdir src_target
@@ -190,12 +191,12 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install -r requirements-jupyter.txt
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
-        - pip install futures
-        - pip install pygments
-        - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py3_test.coco
         - mkdir src_target
@@ -284,7 +285,9 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coco
@@ -370,11 +373,12 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install -r requirements-jupyter.txt
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
-        - pip install pygments
-        - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py2_test.coco
         - mkdir src_target
@@ -460,11 +464,12 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install -r requirements-jupyter.txt
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
-        - pip install pygments
-        - pip install jupyter
         - rm src/cocotest/py35_test.coco
         - rm src/cocotest/py2_test.coco
         - mkdir src_target
@@ -550,11 +555,12 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install -r requirements-jupyter.txt
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
-        - pip install pygments
-        - pip install jupyter
         - rm src/cocotest/py2_test.coco
         - mkdir src_target
         - cp -r src/* src_target
@@ -648,7 +654,9 @@ matrix:
 
       install:
         - git clone -b develop https://github.com/evhub/coconut.git
-        - pip install ./coconut
+        - pushd coconut
+        - pip install .
+        - popd
         - git clone https://github.com/evhub/prisoner.git
         - git clone https://github.com/evhub/pyston.git
         - rm src/cocotest/py35_test.coco
