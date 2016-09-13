@@ -252,6 +252,7 @@ def main_test():
     assert isinstance(aclass, object)
     assert tee((1,2)) |> (is)
     assert tee(f{1,2}) |> (is)
+    assert (x -> 2 / x)(4) == 1/2
     return True
 
 def main(*args):
